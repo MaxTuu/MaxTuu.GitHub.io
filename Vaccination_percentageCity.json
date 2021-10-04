@@ -1,0 +1,74 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    
+    "title": {
+      "text": "Vacination rate in England",
+      "subtitle":"First dose vaccination",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":11,
+      "anchor": "start",
+      "color": "black"
+    },
+    
+     "data": {
+      "url": "https://api.coronavirus.data.gov.uk/v2/data?areaType=ltla&metric=cumVaccinationFirstDoseUptakeByVaccinationDatePercentage&format=csv",
+      "format": {"type": "csv"}
+    },
+  
+  "selection": {
+  "Region": {
+    "type": "single",
+    "fields": ["areaName"],
+    "bind": {
+      "input": "select",
+      "options": [null, "Bristol, City of", "Glasgow City", "Manchester", "Cardiff", "Birmingham", "Belfast", "Leeds", "Liverpool"],
+      "name": "Pick a city"
+    }
+  }
+},
+
+   "transform":[
+
+      
+      {"filter": {
+        "field": "areaName", 
+        "oneOf": ["Bristol, City of", "Glasgow City", "Manchester", "Cardiff", "Birmingham", "Belfast", "Leeds", "Liverpool"]}
+        },
+
+      {"filter": {"selection": "Region"}}
+
+
+    ],    
+    
+    "height": 300,
+    "width": 310,
+     
+    "mark": {"type": "line", "point": false},
+   
+    "encoding": {
+  
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "title": null,
+        "axis": {"grid": false}
+      },
+  
+      "y": {
+        "field": "cumVaccinationFirstDoseUptakeByVaccinationDatePercentage",
+        "type": "quantitative",
+        "title": "",
+        "axis": {"grid": false}
+      },
+  
+      "color": {
+        "field": "areaName",
+        "type": "nominal",
+        "scale": {"scheme": "set1"},
+        "title": null,
+        "legend": {
+          "orient": "top-left", 
+          "fillColor": "#FcFdFd"}
+      }
+  }
+  }
