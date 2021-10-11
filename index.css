@@ -3,6 +3,8 @@
 
 body{
     background-color: rgb(233, 233, 233);
+    max-width: 600px;
+    margin: auto;
 }
 
 h1, h3, p{
@@ -11,7 +13,7 @@ h1, h3, p{
 }
 
 .chart{
-    background-color: rgb(233, 233, 233);
+    background-color: white;
     width:330px;
     border-width: 10px;
     border-style: solid;
