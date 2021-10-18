@@ -1,0 +1,43 @@
+
+  {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "description": "Productivity UK",
+  
+     "title": {
+      "text": "Change per year in UK productivity, 1971-2021",
+      "subtitle":"Labour productivity. Output per hour worked, 2018==100. Source: ONS",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+    
+    "data": {
+      "url": "https://api.openweathermap.org/data/2.5/forecast?q=Bristol,uk&units=metric&appid=36628bdc020423573e102b2f746c1c0a"},
+    "height": 300,
+    "width": 345,
+    "mark": {
+      "type": "line",
+      "point": true,
+      "interpolate": "monotone",
+      "color": "blueviolet"
+    },
+    "encoding": {
+      "x": {
+        "field": "dt_txt",
+        "type": "temporal",
+        "axis": {
+          "title": null,
+          "grid": false,
+          "labelSeparation": 20,
+          "ticks": false
+        }
+      },
+      "y": {
+        "field": "temp",
+        "type": "quantitative",
+        "title": "",
+        "axis": {"grid": false}
+      }
+    }
+  }
