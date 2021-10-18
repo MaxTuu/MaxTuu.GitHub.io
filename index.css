@@ -3,7 +3,7 @@
 
 body{
     background-color: #667666;
-    max-width: 300;
+    max-width: 450;
     margin: auto;
 }
 
@@ -14,7 +14,8 @@ h1, h3, p{
 
 .chart{
     background-color: white;
-    width:300px;
+    width:450;
+    margin: auto;
     border-width: 10px;
     border-style: solid;
     border-radius: 5px;
