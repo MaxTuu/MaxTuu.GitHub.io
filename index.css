@@ -5,6 +5,8 @@ body{
     background-color: #667666;
     max-width: auto;
     margin: auto;
+    text-align: center;
+    width: 100%;
 }
 
 h1, h3, p{
