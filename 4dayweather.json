@@ -4,8 +4,8 @@
     "description": "Productivity UK",
   
      "title": {
-      "text": "Change per year in UK productivity, 1971-2021",
-      "subtitle":"Labour productivity. Output per hour worked, 2018==100. Source: ONS",
+      "text": "Weather forecast",
+      "subtitle":"Bristol for the next 4 days",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
@@ -28,7 +28,7 @@
         "field": "dt_txt",
         "type": "temporal",
         "axis": {
-          "title": null,
+          "title": "Date",
           "grid": false,
           "labelSeparation": 20,
           "ticks": false
@@ -37,7 +37,7 @@
       "y": {
         "field": "main.temp",
         "type": "quantitative",
-        "title": "",
+        "title": "Tempreture, celcius",
         "axis": {"grid": false}
       }
     }
