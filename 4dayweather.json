@@ -13,7 +13,8 @@
     },
     
     "data": {
-      "url": "https://api.openweathermap.org/data/2.5/forecast?q=Bristol,uk&units=metric&appid=36628bdc020423573e102b2f746c1c0a"},
+      "url": "https://api.openweathermap.org/data/2.5/forecast?q=Bristol,uk&units=metric&appid=36628bdc020423573e102b2f746c1c0a", 
+      "format": {"type": "json", "property":"list"}},
     "height": 300,
     "width": 345,
     "mark": {
@@ -34,7 +35,7 @@
         }
       },
       "y": {
-        "field": "temp",
+        "field": "main.temp",
         "type": "quantitative",
         "title": "",
         "axis": {"grid": false}
