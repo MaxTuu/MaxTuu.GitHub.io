@@ -1,0 +1,44 @@
+
+  {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "description": "Productivity UK",
+  
+     "title": {
+      "text": "Weather forecast",
+      "subtitle":"Berlin from 08/11 to 12/11",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+    
+    "data": {
+      "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week5weatherBerlin.json", 
+      "format": {"type": "json", "property":"list"}},
+    "height": 300,
+    "width": 345,
+    "mark": {
+      "type": "line",
+      "point": true,
+      "interpolate": "monotone",
+      "color": "blueviolet"
+    },
+    "encoding": {
+      "x": {
+        "field": "dt_txt",
+        "type": "temporal",
+        "axis": {
+          "title": "Date",
+          "grid": false,
+          "labelSeparation": 20,
+          "ticks": false
+        }
+      },
+      "y": {
+        "field": "main.temp",
+        "type": "quantitative",
+        "title": "Tempreture, celcius",
+        "axis": {"grid": false}
+      }
+    }
+  }
