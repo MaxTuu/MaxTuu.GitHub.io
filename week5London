@@ -13,7 +13,7 @@
     },
     
     "data": {
-      "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week5weatherLondon.json", 
+      "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week5data.London.json", 
       "format": {"type": "json", "property":"list"}},
     "height": 300,
     "width": 345,
