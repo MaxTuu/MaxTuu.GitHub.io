@@ -4,6 +4,17 @@
   "data": {
     "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/Scraper_csv.csv"
   },
+  
+   "title": {
+      "text": "Highest ranking countries by HDI ",
+      "subtitle":"Scrapped data from Wikipedia",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+  
+  
   "encoding": {
     "y": {"field": "hdi", "type": "quantitative", "scale":{"domain":[0.85,0.96]}},
     "x": {"field": "country", "type": "ordinal", "sort": "-"}
