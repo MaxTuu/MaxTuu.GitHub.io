@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Google's stock price over time.",
+  
+     "title": {
+      "text": "Has China reached its inflation target?",
+      "subtitle":"Comparing target to CPI inflation rate, 2005-2013",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"},
+
+
+
+  "layer":[
+    
+      {
+      "data": {
+    "values": [
+      {"date": "2005", "target": 4},{"date": "2006", "target": 3}, {"date":   "2007", "target": 3},{"date": "2008", "target": 4.8},{"date": "2009", "target": 4},{"date": "2010", "target": 3},{"date": "2011", "target": 4},{"date": "2012", "target": 4},{"date": "2013", "target": 3.5}
+    ]},
+  
+  "mark": {
+    "type": "area",
+    "line": {
+      "color": "darkgreen"
+    },
+    "color": {
+      "x1": 1,
+      "y1": 1,
+      "x2": 1,
+      "y2": 0,
+      "gradient": "linear",
+      "stops": [
+        {
+          "offset": 0,
+          "color": "grey"
+        },
+        {
+          "offset": 1,
+          "color": "darkgreen"
+        }
+      ]
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "axis":{"title":"Year"}
+    },
+    "y": {
+      "field": "target",
+      "type": "quantitative",
+      "axis":{"title":"Inflation rate, %"}
+    }
+  }
+},
+    
+    {
+  
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week8_China_inflation.json"},
+  "mark": {"type": "line", "line":{"color":"grey"}},
+  "encoding": {
+    "x": {"field": "Time", "type": "quantitative", "axis":{"title":"", "labels":"", "ticks":""}},
+    "y": {"field": "Value", "type": "quantitative", "axis":{"title":""}}
+  }
+  }
+
+  ]
+}
