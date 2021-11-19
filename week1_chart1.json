@@ -12,15 +12,15 @@
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
     "anchor": "start",
+    "font": "Italic",
     "color": "black"
   },
 
-
+ "config":{"background": "#FFF1E0"},
 
   "height": 300,
-  
-  "width": 280,
-  
+  "width": 300,
+
   "mark": {"type": "bar", "width":10},
   
   "selection": {
@@ -64,7 +64,8 @@
     "y": {
       "field": "newCasesByPublishDate",
       "type": "quantitative",
-      "title": null
+      "title": null,
+      "font": "Italic"
     },
     
       
@@ -73,6 +74,7 @@
       "type": "nominal",
       "legend": null,
       "scale": {"scheme": "inferno"}
+      
     }
   }
 }
