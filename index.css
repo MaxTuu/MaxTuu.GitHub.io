@@ -14,10 +14,10 @@ h1, h3, p{
     font-family: 'Playfair Display', sans-serif;
 }
 
-h1{font-size:40}
-h2{font-size:30}
-h3{font-size:20}
-p{font-size:15}
+h1{font-size:60}
+h2{font-size:45}
+h3{font-size:30}
+p{font-size:20}
 
 .chart{
     background-color: white;
