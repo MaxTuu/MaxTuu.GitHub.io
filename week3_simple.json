@@ -25,6 +25,7 @@
       "color": "black"
     },
 
+  "config":{"background": "#F2DFCE"},
   "height": 300,
   "width": 450,
 
