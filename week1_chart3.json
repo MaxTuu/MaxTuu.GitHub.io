@@ -3,7 +3,7 @@
   
   "title": {
     "text": "Covid Live - UK cities",
-    "subtitle":"New cases by specimen date, rolling rate",
+    "subtitle":"New cases by specimen date. Source: data.gov.uk",
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
     "anchor": "start",
