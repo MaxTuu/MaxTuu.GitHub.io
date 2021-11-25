@@ -3,7 +3,7 @@
     
     "title": {
       "text": "Covid deaths in the UK",
-      "subtitle":"Cumulative covid-19 deaths by city, up until 04/10/2021.    Source: data.gov.uk",
+      "subtitle":"Cumulative covid-19 deaths by city, up until 04/10/2021. Source: data.gov.uk",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "font": "Italic",
