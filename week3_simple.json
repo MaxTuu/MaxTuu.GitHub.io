@@ -27,14 +27,14 @@
 
   "config":{"background": "#F2DFCE"},
   "height": 300,
-  "width": 450,
+  "width": 300,
 
-  "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff", "tooltip": true},
+  "mark": {"type": "arc", "innerRadius": 80, "stroke": "#2e2f2f", "tooltip": true},
   "encoding": {
-    "theta": {"field": "value", "type": "quantitative", "stack": true},
-    "radius": {"field": "value", "scale": {"type": "sqrt", "zero": true,  "rangeMin": 20}},
-    "color": {"field": "category", "type": "nominal", "scale": {"scheme":        "inferno"}, "sort": "descending","legend": {
-          "orient": "top-left", 
+    "theta": {"field": "value", "type": "quantitative"}
+    ,
+    "color": {"field": "category", "type": "nominal", "scale": {"scheme":     "inferno"}, "sort": "descending","legend": {
+          "orient": "right", 
           "fillColor": "#F2DFCE",
           "padding": 3
           }
