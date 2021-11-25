@@ -14,14 +14,14 @@
   },
   
   "config": {
-    "background":"white",
+    "background":"#F2DFCE",
     "view": {
       "stroke": "transparent"
     }
   },
 
   "XYZconfig": {
-    "background":"#122b39",
+    "background":"#F2DFCE",
     "view": {
       "stroke": "transparent"}},
   
@@ -69,7 +69,7 @@
       "title": null,
       "axis": {
         "grid": false,
-        "XYZlabelColor":"#cbc7cf"}
+        "XYZlabelColor":"#F2DFCE"}
     },
 
     "y": {
@@ -78,19 +78,19 @@
       "title": null,
       "axis": {
         "grid": false,
-        "XYZlabelColor":"#cbc7cf"
+        "XYZlabelColor":"#F2DFCE"
       }
     },
 
     "color": {
       "field": "areaName",
       "type": "nominal",
-      "scale": {"scheme": "set1"},
+      "scale": {"scheme": "inferno"},
       "XYZscale": {"scheme": "yelloworangered"},
       "title": null,
       "legend": {
         "orient": "top-left", 
-        "fillColor": "#FcFdFd",
+        "fillColor": "#F2DFCE",
         "XYZfillColor": "#122b39",
         "XYZlabelColor":"antiquewhite"
       }
