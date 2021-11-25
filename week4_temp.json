@@ -1,44 +1,52 @@
-
   {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
     "description": "Productivity UK",
   
      "title": {
-      "text": "Weather forecast",
-      "subtitle":"Bristol for the next 4 days",
+      "text": "Bristol weather forecast",
+      "subtitle":"Covering the next four days. Source: openweathermap",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
-      "color": "black"
+      "color": "black",
+      "fontSize":15,
+      "font": "Italic"
     },
+
+    
+    "config":{"background": "#F2DFCE"},
     
     "data": {
       "url": "https://api.openweathermap.org/data/2.5/forecast?q=Bristol,uk&units=metric&appid=36628bdc020423573e102b2f746c1c0a", 
       "format": {"type": "json", "property":"list"}},
     "height": 300,
-    "width": 345,
+    "width": 350,
     "mark": {
       "type": "line",
-      "point": true,
       "interpolate": "monotone",
-      "color": "blueviolet"
+      "color": "#ad3c5f",
+      "point": {
+      "filled": false,
+      "stroke": "#ad3c5f",
+      "fill": "white"}
     },
     "encoding": {
       "x": {
         "field": "dt_txt",
         "type": "temporal",
         "axis": {
-          "title": "Date",
-          "grid": false,
+          "title": "",
+          "grid": true,
           "labelSeparation": 20,
-          "ticks": false
+          "ticks": false,
+          "gridColor": "lightgrey"
         }
       },
       "y": {
         "field": "main.temp",
         "type": "quantitative",
         "title": "Tempreture, celcius",
-        "axis": {"grid": false}
+        "axis": { "grid": true, "gridColor": "darkgrey"}
       }
     }
   }
