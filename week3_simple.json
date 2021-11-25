@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple radial chart with embedded data.",
+  "data": {
+    "values": [
+      {"category": "Income Taxes", "value": 344.9},
+      {"category": "VAT", "value": 127.9},
+      {"category": "Other Taxes", "value": 98.4},
+      {"category": "Other Receipts", "value": 87.7},
+      {"category": "Corporation Tax", "value": 40.3},
+      {"category": "Capital Taxes", "value": 30.3},
+      {"category": "Other", "value": 49.8},
+      {"category": "Council Tax", "value": 39.9}
+    ]
+  },
+  
+  "title": {
+      "text": "Predicted public sector income, 2021-22",
+      "subtitle":"Income by source, £ billion. Source: obr.uk",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "font": "Italic",
+      "fontSize":15,
+      "anchor": "start",
+      "color": "black"
+    },
+
+  "height": 300,
+  "width": 450,
+
+  "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff", "tooltip": true},
+  "encoding": {
+    "theta": {"field": "value", "type": "quantitative", "stack": true},
+    "radius": {"field": "value", "scale": {"type": "sqrt", "zero": true,  "rangeMin": 20}},
+    "color": {"field": "category", "type": "nominal", "scale": {"scheme":        "inferno"}, "sort": "descending","legend": {
+          "orient": "top-left", 
+          "fillColor": "#F2DFCE",
+          "padding": 3
+          }
+    }
+  }
+}
