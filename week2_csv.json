@@ -2,14 +2,20 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     
     "title": {
-      "text": "Cumulative deaths in UK cities",
-      "subtitle":"",
+      "text": "Covid deaths in the UK",
+      "subtitle":"Cumulative covid-19 deaths by city, up until 04/10/2021.    Source: data.gov.uk",
       "subtitleFontStyle":"italic",
-      "subtitleFontSize":11,
+      "subtitleFontSize":10,
+      "font": "Italic",
+      "fontSize":15,
       "anchor": "start",
       "color": "black"
     },
     
+    "config":{"background": "#F2DFCE"},
+     "height": 300,
+     "width": 300,
+
      "data": {
       "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/deaths_ratecity.csv",
       "format": {"type": "csv"}
@@ -40,8 +46,7 @@
 
     ],    
     
-    "height": 300,
-    "width": 310,
+
      
     "mark": {"type": "line", "point": false},
    
@@ -51,24 +56,28 @@
         "field": "date",
         "type": "temporal",
         "title": null,
-        "axis": {"grid": false}
+        "axis": {"grid": false
+        }
+        
       },
   
       "y": {
         "field": "cumDeaths28DaysByDeathDate",
         "type": "quantitative",
         "title": "",
-        "axis": {"grid": false}
+        "axis": {"grid": true, "gridColor": "darkgrey"}
       },
   
       "color": {
         "field": "areaName",
         "type": "nominal",
-        "scale": {"scheme": "set1"},
+        "scale": {"scheme": "inferno"},
         "title": null,
         "legend": {
           "orient": "top-left", 
-          "fillColor": "#FcFdFd"}
+          "fillColor": "#F2DFCE",
+          "strokeColor": "black",
+          "padding": 3}
       }
   }
   }
