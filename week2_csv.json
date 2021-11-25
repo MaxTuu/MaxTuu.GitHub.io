@@ -17,7 +17,7 @@
      "width": 300,
 
      "data": {
-      "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/deaths_ratecity.csv",
+      "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week2_csv_data.csv",
       "format": {"type": "csv"}
     },
   
