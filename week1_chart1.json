@@ -60,12 +60,14 @@
   ],
 
   "encoding": {
-    "x": {"field": "date", "type": "temporal", "title": null},
+    "x": {"field": "date", "type": "temporal", "title": null,
+          "axis":{"gridColor": "darkgrey"}},
     "y": {
       "field": "newCasesByPublishDate",
       "type": "quantitative",
       "title": null,
-      "font": "Italic"
+      "font": "Italic",
+      "axis":{"gridColor": "darkgrey"}
     },
     
       
