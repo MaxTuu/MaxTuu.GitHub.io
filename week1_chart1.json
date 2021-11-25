@@ -9,7 +9,7 @@
 
   "title": {
     "text": "Covid cases: UK regions",
-    "subtitle":"Number of reported covid-19 cases by region. Source: data.gov.uk ",
+    "subtitle":"New cases by specimen date. Source: data.gov.uk ",
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
     "anchor": "start",
