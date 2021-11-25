@@ -2,13 +2,16 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     
     "title": {
-      "text": "[Live] Vacination rate in England",
-      "subtitle":"First dose vaccination",
+      "text": "Vacination rate in England",
+      "subtitle":"First dose vaccination by city. Source: data.gov.uk",
       "subtitleFontStyle":"italic",
-      "subtitleFontSize":11,
+      "subtitleFontSize":10,
+      "font": "Italic",
       "anchor": "start",
       "color": "black"
     },
+
+    "config":{"background": "#F2DFCE"},
     
      "data": {
       "url": "https://api.coronavirus.data.gov.uk/v2/data?areaType=ltla&metric=cumVaccinationFirstDoseUptakeByVaccinationDatePercentage&format=csv",
@@ -58,17 +61,20 @@
         "field": "cumVaccinationFirstDoseUptakeByVaccinationDatePercentage",
         "type": "quantitative",
         "title": "",
-        "axis": {"grid": false}
+        "axis": {"grid": true, "gridColor": "darkgrey"}
       },
   
       "color": {
         "field": "areaName",
         "type": "nominal",
-        "scale": {"scheme": "set1"},
+        "scale": {"scheme": "inferno"},
         "title": null,
         "legend": {
           "orient": "top-left", 
-          "fillColor": "#FcFdFd"}
+          "fillColor": "#F2DFCE",
+          "strokeColor": "black",
+          "padding": 3
+          }
       }
   }
   }
