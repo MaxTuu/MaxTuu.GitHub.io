@@ -10,6 +10,7 @@
     "subtitleFontSize":10,
     "anchor": "start",
     "color": "black",
+    "fontSize":15,
     "font": "Italic"
   },
   
