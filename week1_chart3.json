@@ -8,6 +8,8 @@
     "subtitleFontSize":10,
     "anchor": "start",
     "color": "black",
+    "fontSize":15,
+    "font": "Italic",
     "XYZcolor": "#cbc7cf",
     "XYZsubtitleColor":"#cbc7cf"
 
