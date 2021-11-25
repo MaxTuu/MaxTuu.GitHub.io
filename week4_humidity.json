@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://api.openweathermap.org/data/2.5/onecall?lat=51&lon=2&exclude=current&units=metric&appid=36628bdc020423573e102b2f746c1c0a",
+     "format": {"type": "json", "property":"hourly"}},
+  
+
+     "title": {
+      "text": "Bristol humidity forecast",
+      "subtitle":"Covering the next 48 hours. Source: openweathermap",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black",
+      "fontSize":15,
+      "font": "Italic"
+    },
+
+  "config":{"background": "#F2DFCE"},
+  "height": 300,
+  "width": 350,
+
+  "mark": {
+    "type": "area",
+    "line": {
+      "color": "#3268a8"
+    },
+    "color": {
+      "x1": 1,
+      "y1": 1,
+      "x2": 1,
+      "y2": 0,
+      "gradient": "linear",
+      "stops": [
+        {
+          "offset": 0.3,
+          "color": "#F2DFCE"
+        },
+        {
+          "offset": 1,
+          "color": "#3268a8"
+        }
+      ]
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "dt",
+      "type": "temporal",
+      "axis": {
+        "title": null,
+        "grid": false,
+        "labelSeparation": 20,
+        "ticks": false,
+        "formatType":"hours"
+      }
+      
+    },
+    "y": {
+      "field": "humidity",
+      "type": "quantitative",
+      "title": "",
+      "axis": { "grid": true, "gridColor": "darkgrey"}
+    }
+  }
+}
