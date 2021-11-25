@@ -3,23 +3,27 @@
     "description": "Productivity UK",
   
      "title": {
-      "text": "Change per year in UK productivity, 1971-2021",
-      "subtitle":"Labour productivity. Output per hour worked, 2018==100. Source: ONS",
+      "text": "Change in Gross National Income, 2010-2021",
+      "subtitle":"Percentage change on the previous quater. Source: ons.gov.uk",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
-      "color": "black"
+      "color": "black",
+      "fontSize":15,
+      "font": "Italic"
     },
     
+    "config":{"background": "#F2DFCE"},
+
     "data": {
-      "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/growthOutput.csv"},
+      "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week3_modified_data.csv"},
     "height": 300,
-    "width": 345,
+    "width": 300,
     "mark": {
       "type": "line",
-      "point": true,
+      "point": false,
       "interpolate": "monotone",
-      "color": "blueviolet"
+      "color": "#ad3c5f"
     },
     "encoding": {
       "x": {
@@ -27,16 +31,16 @@
         "type": "temporal",
         "axis": {
           "title": null,
-          "grid": false,
-          "labelSeparation": 20,
-          "ticks": false
+          "grid": true, "gridColor": "lightgrey"
         }
+        
       },
       "y": {
         "field": "Value",
         "type": "quantitative",
         "title": "",
-        "axis": {"grid": false}
+        "axis": { "grid": true, "gridColor": "darkgrey"}
+        
       }
     }
   }
