@@ -8,7 +8,7 @@
 
        "title": {
       "text": "Comparing Emissions and Income of OECD Memebrs",
-      "subtitle":"Total green house gas emissions (1000 tonnes) and GDP per capita ($) for OECD Countries, 2017",
+      "subtitle":"Total green house gas emissions, and GDP per capita for OECD Countries, 2017. Source: OECD",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
@@ -28,31 +28,33 @@
   "encoding": {
     "x": {
       "field": "GDP per capita", "type": "quantitative",
-      "scale": {"domain": [20000, 80000]},
+      "scale": {"domain": [23000, 80000]},
       "axis": {
-          "title": "GDP per capita",
+          "title": "GDP per capita ($)",
           "titleFont": "Italic",
           "titleFontSize": 12,
           "titleFontWeight": 500,
           "grid": true, "gridColor": "darkgrey"}
     },
     "y": {
-      "field": "GHG Emissions (1000 Tonnes)", "type": "quantitative",
-      "scale": {"domain": [0, 1000000]},
+      "field": "GHG Emissions per capita", "type": "quantitative",
+      "scale": {"domain": [5, 18]},
       "axis": {
-          "title": "Total GHG Emissions",
+          "title": ["Total GHG Emissions", "(per capita 1000 tonnes)"],
           "titleFont": "Italic",
           "titleFontSize": 12,
           "titleFontWeight": 500,
           "titleAngle": 270,
           "grid": true, "gridColor": "darkgrey"}
     },
-    "color": {"field": "Environmental Policy Index", "type": "quantitative", "scale": {"scheme":     "inferno"}},
+    "color": {"field": "Environmental Policy Index", "type": "quantitative", "scale": {"scheme":     "inferno"},
+    "legend": {"title": ["Environmental","Policy Index"], "titleFont": "Italic","titleFontSize": 11,"titleFontWeight": 500}
+    },
 
-    "size": {"field": "Population", "legend": null, "scale": {"rangeMin": 20,"rangeMax": 1000}},
+    "size": {"field": "Population", "type": "quantitative", "legend": null, "scale": {"rangeMin": 200,"rangeMax": 1000}},
 
     "tooltip": [
-      {"field": "Country"},{"field": "GHG Emissions (1000 Tonnes)"},{"field": "GDP per capita"},{"field": "Environmental Policy Index"},{"field": "Population"}
+      {"field": "Country"},{"field": "GHG Emissions"},{"field": "GHG Emissions per capita"},{"field": "GDP per capita"},{"field": "Environmental Policy Index"},{"field": "Population"}
     ]
   }
 }
