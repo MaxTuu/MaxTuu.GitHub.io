@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week10_data.csv"},
+
+    "config":{"background": "#F2DFCE"}, 
+    "height": 300,
+    "width": 300,
+
+       "title": {
+      "text": "Comparing Emissions and Income of OECD Memebrs",
+      "subtitle":"Total green house gas emissions (1000 tonnes) and GDP per capita ($) for OECD Countries, 2017",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black",
+      "fontSize":15,
+      "font": "Italic"
+    },
+
+
+  "params": [{
+    "name": "grid",
+    "select": "interval",
+    "bind": "scales"
+  }],
+  "mark": {"type":"circle"},
+
+  "encoding": {
+    "x": {
+      "field": "GDP per capita", "type": "quantitative",
+      "scale": {"domain": [20000, 80000]},
+      "axis": {
+          "title": "GDP per capita",
+          "titleFont": "Italic",
+          "titleFontSize": 12,
+          "titleFontWeight": 500,
+          "grid": true, "gridColor": "darkgrey"}
+    },
+    "y": {
+      "field": "GHG Emissions (1000 Tonnes)", "type": "quantitative",
+      "scale": {"domain": [0, 1000000]},
+      "axis": {
+          "title": "Total GHG Emissions",
+          "titleFont": "Italic",
+          "titleFontSize": 12,
+          "titleFontWeight": 500,
+          "titleAngle": 270,
+          "grid": true, "gridColor": "darkgrey"}
+    },
+    "color": {"field": "Environmental Policy Index", "type": "quantitative", "scale": {"scheme":     "inferno"}},
+
+    "size": {"field": "Population", "legend": null, "scale": {"rangeMin": 20,"rangeMax": 1000}},
+
+    "tooltip": [
+      {"field": "Country"},{"field": "GHG Emissions (1000 Tonnes)"},{"field": "GDP per capita"},{"field": "Environmental Policy Index"},{"field": "Population"}
+    ]
+  }
+}
