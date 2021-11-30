@@ -40,7 +40,7 @@
       "field": "GHG Emissions per capita", "type": "quantitative",
       "scale": {"domain": [5, 18]},
       "axis": {
-          "title": ["Total GHG Emissions", "(per capita 1000 tonnes)"],
+          "title": ["Emissions per capita ", "(1000 tonnes)"],
           "titleFont": "Italic",
           "titleFontSize": 12,
           "titleFontWeight": 500,
