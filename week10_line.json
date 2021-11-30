@@ -1,0 +1,85 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week10_linedata.csv"},
+  
+  
+  "height": 300,
+  "width": 300,
+
+      "title": {
+      "text": "Change In Total Green House Gas Emissions",
+      "subtitle":"OECD members total emissions from 2008 to 2019. Base year = 2007. Source: OECD",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black",
+      "fontSize":15,
+      "font": "Italic"
+    },
+
+
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal", "title": "", "axis":{"grid": true, "gridColor": "darkgrey"}},
+    "y": {"field": "CHGHG", "type": "quantitative", "title": "", "axis":{"grid": true, "gridColor": "darkgrey"},
+    "scale":{"domain":[60,130]}},
+    "color": {
+      "condition": {
+        "param": "hover",
+        "field":"Country",
+        "type":"nominal",
+        "legend": {
+          "orient": "right", 
+          "fillColor": "#F2DFCE",
+          "strokeColor": "black",
+          "padding": 4
+          },
+        "scale":{"scheme":"inferno"}
+      },
+      "value": "grey"
+    },
+    "opacity": {
+      "condition": {
+        "param": "hover",
+        "value": 1
+      },
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "Country"},{"field": "GHG", "title":"Total GHG emission"}, {"field": "CHGHG", "title":"GHG re-based"},{"field": "Year", "type": "temporal"}
+    ]
+  },
+
+
+  
+
+  "layer": [{
+    "description": "transparent layer to make it easier to trigger selection",
+    "params": [{
+      "name": "hover",
+      "value": [{"Country": "Germany"}],
+      "select": {
+        "type": "point",
+        "fields": ["Country"],
+        "on": "mouseover"
+      }
+    }],
+    "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent"}
+  }, 
+  {
+    "mark": "line"
+  }, {
+    "encoding": {
+      "x": {"aggregate": "max", "field": "date"},
+      "y": {"aggregate": {"argmax": "date"}, "field": "price"}
+    },
+    "layer": [{
+      "mark": {"type": "circle"}
+    }, {
+      "mark": {"type": "text", "align": "left", "dx": 4},
+      "encoding": {"text": {"field":"symbol", "type": "nominal"}}
+    }]
+  }],
+
+
+  "config": {"view": {"stroke": null}, "background": "#F2DFCE"}
+}
