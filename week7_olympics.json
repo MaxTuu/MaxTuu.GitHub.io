@@ -10,7 +10,7 @@
 
        "title": {
       "text": "Olympic Medal wins by nation",
-      "subtitle":"Top 10 countries by total summer olympic medals (2021). Source: Wikipedia",
+      "subtitle":"Top 10 countries by total summer olympic medals (up to 2021). Source: Wikipedia",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
@@ -35,8 +35,10 @@
       "field":"Medal",
       "scale": {"range":["#b06204", "#eebb11","#bfbebb"]},
       "legend":null},
-      "opacity": {"value": 1}
+      "opacity": {"value": 1},
+      "tooltip": [{"field":"Country"},{"field":"Medal"},{"field":"Total"}]
       
   }
   
 }
+
