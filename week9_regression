@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week9_partydata.csv"},
+
+   "title": {
+    "text": "Political Party Opinion",
+    "subtitle":["Individuals opinion on the Labour and Conservative party. (0 = Dislike a lot, 10 = Like a lot)", "Source: British election study, 2020"],
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black",
+    "fontSize":15,
+    "font": "Italic"
+  },
+  
+
+
+  "config":{"background": "#F2DFCE","view": 
+      {"stroke": "transparent"}
+    },
+
+
+  "spacing": 5,
+  "bounds": "flush",
+  "vconcat": [{
+    "mark": {"type":"bar", "color":"#ad3c5f"},
+    "height": 60,
+    "encoding": {
+      "x": {
+        "bin": true,
+        "field": "likeConW18",
+        "axis": null
+      },
+      "y": {
+        "aggregate": "count",
+        "scale": {
+          "domain": [0,20000]
+        },
+        "title": "",
+        "axis": null
+      }
+    }
+  }, {
+    "spacing": 5,
+    "bounds": "flush",
+
+    "hconcat": [{
+     "height": 200,
+     "width": 200,
+      "mark": "rect",
+      "encoding": {
+        "x": {"bin": true, "field": "likeConW18","title":"Like-score for conservative party"},
+        "y": {"bin": true, "field": "likeLabW18","title":"Like-score for Labour party"},
+        "color": {"aggregate": "count","scale": {"scheme":"inferno"},"sort": "descending", "title":["Number of","people"],"legend":{"orient":"right"}}
+      }
+    }, 
+    
+    
+    {
+      "mark": {"type":"bar", "color":"#ad3c5f"},
+      "width": 50,
+      "encoding": {
+        "y": {
+          "bin": true,
+          "field": "likeLabW18",
+          "axis": {"grid": false},
+          "title":"",
+           "axis": null
+        },
+        "x": {
+          "aggregate": "count",
+          "scale": {"domain": [0,15000]},
+          "title": "",
+          "axis": null
+        }
+        
+      }
+    }]
+  }]
+
+}
