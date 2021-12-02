@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ 
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week7_olympics_data.csv", "format":{"type":"csv"}},
+  
+
+    "config":{"background": "#F2DFCE"}, 
+    "height": 200,
+    "width": 500,
+
+       "title": {
+      "text": "Olympic Medal wins by nation",
+      "subtitle":"Top 10 countries by total summer olympic medals (2021). Source: Wikipedia",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black",
+      "fontSize":15,
+      "font": "Italic"
+    },
+
+
+  "mark": {"type": "circle", "stroke": "#2e2f2f"},
+  "encoding": {
+    "y": {"field": "Medal","type": "ordinal","sort":["Gold","Silver","Bronze"],"title":""},
+    "x": {"field": "Country","type": "ordinal","axis": { "grid": true, "gridColor": "black", "title":""},
+    "sort":["Sweden","Hungary","Australia","Italy","China","German","France","Great Britain","Soviet Union","United States"]
+    },
+    "size": {
+      "field": "Total",
+      "type": "quantitative",
+      "scale": {"rangeMin": 10,"rangeMax": 8000},
+      "legend":null},
+    "color":{
+      "field":"Medal",
+      "scale": {"range":["#b06204", "#eebb11","#bfbebb"]},
+      "legend":null},
+      "opacity": {"value": 1}
+      
+  }
+  
+}
