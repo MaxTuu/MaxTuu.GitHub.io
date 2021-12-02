@@ -144,41 +144,15 @@
     
           <h3>Bulk data: Loops and APIs</h3>
     <p>Task: Batch download data from different API's using python.</p>
-    <p>Using the following python code, data from four seperate APIs are used to create four seperate JSON files, which in turn produce the following trellis chart. <br>
-        In particular, chart ten compares the number of PCR tests taken across the UK </p>
+    <p>Using python code, data from four seperate APIs are downloaded and appended to create one single JSON data file, which in turn produces the following trellis chart. <br>
+        In particular, chart ten compares daily PCR tests taken across the UK.</p>
 
-    <p><b>Covid-19 PCR tests taken daily over time</b></p>
+    
     <!--Chart 10 -->
     <div class="chart" id="chart10">
         <script>
-            var myChart10 = "week5_england.json";
+            var myChart10 = "week5_trellis.json";
             vegaEmbed('#chart10', myChart10);
-        </script>
-    </div>
-
-    <!--Chart 11 -->
-    <div class="chart" id="chart11">
-        <script>
-            var myChart11 = "week5_scotland.json";
-            vegaEmbed('#chart11', myChart11);
-        </script>
-    </div>
-    
-    <p></p>
-    
-        <!--Chart 12 -->
-    <div class="chart" id="chart12">
-        <script>
-            var myChart12 = "week5_wales.json";
-            vegaEmbed('#chart12', myChart12);
-        </script>
-    </div>
-
-    <!--Chart 13 -->
-    <div class="chart" id="chart13">
-        <script>
-            var myChart13 = "week5_NI.json";
-            vegaEmbed('#chart13', myChart13);
         </script>
     </div>
     
