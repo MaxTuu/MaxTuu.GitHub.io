@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week9_partydata.csv"},
 
+  
    "title": {
     "text": "Political Party Opinion",
     "subtitle":["Individuals opinion on the Labour and Conservative party. (0 = Dislike a lot, 10 = Like a lot)", "Source: British election study, 2020"],
@@ -13,69 +13,50 @@
     "font": "Italic"
   },
   
-
-
   "config":{"background": "#F2DFCE","view": 
       {"stroke": "transparent"}
     },
 
 
-  "spacing": 5,
-  "bounds": "flush",
-  "vconcat": [{
-    "mark": {"type":"bar", "color":"#ad3c5f"},
-    "height": 60,
-    "encoding": {
-      "x": {
-        "bin": true,
-        "field": "likeConW18",
-        "axis": null
-      },
-      "y": {
-        "aggregate": "count",
-        "scale": {
-          "domain": [0,20000]
-        },
-        "title": "",
-        "axis": null
-      }
-    }
-  }, {
-    "spacing": 5,
-    "bounds": "flush",
+    "height": 250,
+     "width": 250,
 
-    "hconcat": [{
-     "height": 200,
-     "width": 200,
-      "mark": "rect",
+    "layer":[{
+
+     "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week9_partydata.csv"},
+      "mark": {"type":"rect","opacity":1},
       "encoding": {
         "x": {"bin": true, "field": "likeConW18","title":"Like-score for conservative party"},
         "y": {"bin": true, "field": "likeLabW18","title":"Like-score for Labour party"},
-        "color": {"aggregate": "count","scale": {"scheme":"inferno"},"sort": "descending", "title":["Number of","people"],"legend":{"orient":"right"}}
+        "color": {"aggregate": "count","scale": {"scheme":"inferno"},"sort": "descending", "title":["Number of","people"],"legend":{"orient":"right"}},
+        "tooltip": [
+      {"field": "__count","title":"Count"}]
       }
-    }, 
-    
-    
-    {
-      "mark": {"type":"bar", "color":"#ad3c5f"},
-      "width": 50,
-      "encoding": {
-        "y": {
-          "bin": true,
-          "field": "likeLabW18",
-          "axis": {"grid": false},
-          "title":"",
-           "axis": null
-        },
-        "x": {
-          "aggregate": "count",
-          "scale": {"domain": [0,15000]},
-          "title": "",
-          "axis": null
-        }
-        
-      }
-    }]
-  }]
-
+      
+      
+    }
+    , {
+    "mark": {
+      "type": "line","strokeWidth":6,"color":"#3a3d3d","interpolate":"cardinal","opacity":0.7
+    },
+    "data": {
+    "values": [
+      {"x": "0", "y": 6.13},
+      {"x": "1", "y": 5.56},
+      {"x": "2", "y": 4.99},
+      {"x": "3", "y": 4.42},
+      {"x": "4", "y": 3.85},
+      {"x": "5", "y": 3.28},
+      {"x": "6", "y": 2.71},
+      {"x": "7", "y": 2.14},
+      {"x": "8", "y": 1.57},
+      {"x": "9", "y": 1},
+      {"x": "10", "y": 0.43}
+    ]},
+    "encoding": {
+      "x":{"field":"x","scale":{"domain":["0","1","2","3","4","5","6","7","8","9","10"]},"axis":null},
+      "y":{"field":"y","type":"quantitative"}
+    }
+  }
+]
 }
