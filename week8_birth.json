@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+    "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week8_birthdata.csv"},
+    
+   "title": {
+    "text": "China's Birth Rate",
+    "subtitle":"Birth rate per 1000 pre, during, and post the one child policy. Source: World Bank",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black",
+    "fontSize":15,
+    "font": "Italic"
+  },
+  
+  "config":{"background": "#F2DFCE"},
+  "height": 300,
+  "width": 350,
+
+    
+    "layer":[{
+    
+    "mark": {"type":"line","color":"#441321","size":2},
+    "encoding": {
+      "x": {"field": "Year","type":"temporal","axis":{"grid":false,"title":""}},
+      "y": {"field": "Birth Rate","type":"quantitative",
+      "axis":{"grid":true,"gridColor":"darkgrey","title":"Birth Rate (per 1000)"}},
+      "tooltip": [
+      {"field": "Birth Rate"}]
+    }},
+
+    {
+      "mark":{"type":"line", "color":"#ad3c5f"},
+      "encoding":{
+        "x":{"field":"Year80","type":"temporal"},
+        "y":{"field":"Birth80","type":"quantitative"},
+        "tooltip": [
+         {"field": "Birth Rate"}]   
+      }
+    },
+
+    {
+      "mark":{"type":"rule","color":"#ad3c5f","size":2},
+      "encoding": {
+        "x":{"field":"marky","type":"temporal"},
+        "y":{"field":"markb","type":"quantitative"}
+      }
+    }
+    ]
+}
