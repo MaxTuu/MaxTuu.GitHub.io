@@ -26,9 +26,20 @@
      "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/week9_partydata.csv"},
       "mark": {"type":"rect"},
       "encoding": {
-        "x": {"bin": true, "field": "likeConW18","title":"Like-score for conservative party"},
-        "y": {"bin": true, "field": "likeLabW18","title":"Like-score for Labour party"},
-        "color": {"aggregate": "count","scale": {"scheme":"inferno"},"sort": "descending", "title":["Number of","people"],"legend":{"orient":"right"}},
+        "x": {
+          "bin": false, "field": "likeConW18",
+          "title":"Like-score for conservative party",
+          "type":"ordinal","scale":{"domain":["0","1","2","3","4","5","6","7","8","9","10"]}
+          },
+        "y": {
+          "bin": false, "field": "likeLabW18",
+          "title":"Like-score for Labour party","type":"ordinal",
+          "scale":{"domain":["10","9","8","7","6","5","4","3","2","1","0"]}
+          },
+        "color": {
+          "aggregate": "count","scale": {"scheme":"inferno"},
+         "sort": "descending", "title":["Number of","people"],"legend":{"orient":"right"}
+        },
         "opacity":{"field":"__count","scale":{"rangeMin":0,"rangeMax":1},"legend":null},
         "tooltip": [
       {"field": "__count","title":"Count"}]
@@ -55,9 +66,10 @@
       {"x": "10", "y": 0.43}
     ]},
     "encoding": {
-      "x":{"field":"x","scale":{"domain":["0","1","2","3","4","5","6","7","8","9","10"]},"axis":null},
-      "y":{"field":"y","type":"quantitative"}
+      "x":{"field":"x","scale":{"domain":["0","1","2","3","4","5","6","7","8","9","10"]}},
+      "y":{"field":"y","type":"quantitative","scale":{"domain":[0,10]},"axis":null}
     }
   }
 ]
 }
+
