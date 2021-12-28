@@ -1,0 +1,30 @@
+
+/* This is my first proper css file */
+
+body{
+    background-color: #F2DFCE;
+    max-width: auto;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+h1, h3, p{
+    color: #2e2f2f;
+    font-family: 'Playfair Display', sans-serif;
+}
+
+h1{font-size:60px}
+h2{font-size:45px}
+h3{font-size:30px}
+p{font-size:20px}
+
+.chart{
+    background-color: #F2DFCE;
+    width: auto;
+    margin: auto;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #F2DFCE;
+}
