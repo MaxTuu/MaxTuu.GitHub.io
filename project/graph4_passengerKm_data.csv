@@ -1,0 +1,331 @@
+﻿Country,Year,Value
+Belarus,2002,26729
+Belarus,2003,25659
+Belarus,2004,25744
+Belarus,2005,21990
+Belarus,2006,21582
+Belarus,2007,21171
+Belarus,2008,18779
+Belarus,2009,16943
+Belarus,2010,20091
+Belarus,2011,20228
+Belarus,2012,21371
+Belarus,2013,21926
+Belarus,2014,19885
+Belarus,2015,18551
+Belarus,2016,18447
+Bulgaria,2002,19616
+Bulgaria,2003,16522
+Bulgaria,2004,14461
+Bulgaria,2005,14678
+Bulgaria,2006,14461
+Bulgaria,2007,14633
+Bulgaria,2008,14640
+Bulgaria,2009,12217
+Bulgaria,2010,12024
+Bulgaria,2011,11834
+Bulgaria,2012,11109
+Bulgaria,2013,10742
+Bulgaria,2014,11847
+Bulgaria,2015,11783
+Bulgaria,2016,11215
+Croatia,2002,4752
+Croatia,2003,4880
+Croatia,2004,4603
+Croatia,2005,4669
+Croatia,2006,4899
+Croatia,2007,5419
+Croatia,2008,5903
+Croatia,2009,5273
+Croatia,2010,5026
+Croatia,2011,4631
+Croatia,2012,4353
+Croatia,2013,4455
+Croatia,2014,4575
+Croatia,2015,4328
+Croatia,2016,4638
+Czech Republic,2002,81555
+Czech Republic,2003,83327
+Czech Republic,2004,82676
+Czech Republic,2005,83915
+Czech Republic,2006,86053
+Czech Republic,2007,87959
+Czech Republic,2008,88552
+Czech Republic,2009,88287
+Czech Republic,2010,80977
+Czech Republic,2011,81471
+Czech Republic,2012,80540
+Czech Republic,2013,81277
+Czech Republic,2014,84067
+Czech Republic,2015,87999.01259
+Czech Republic,2016,91355.47327
+Denmark,2002,69227
+Denmark,2003,69909
+Denmark,2004,71526
+Denmark,2005,71653
+Denmark,2006,72465
+Denmark,2007,74168
+Denmark,2008,74266
+Denmark,2009,73603
+Denmark,2010,73189
+Denmark,2011,73502
+Denmark,2012,74059
+Denmark,2013,74627
+Denmark,2014,73834.55052
+Denmark,2015,74352.07546
+Denmark,2016,73197.3176
+Finland,2002,69318
+Finland,2003,70598
+Finland,2004,71897
+Finland,2005,72928
+Finland,2006,73535
+Finland,2007,75103
+Finland,2008,74992
+Finland,2009,75746
+Finland,2010,76244
+Finland,2011,76912
+Finland,2012,76845
+Finland,2013,76708
+Finland,2014,76934
+Finland,2015,77948
+Finland,2016,69130
+France,2002,863412
+France,2003,863314
+France,2004,865890
+France,2005,858149
+France,2006,860469
+France,2007,867887
+France,2008,859331
+France,2009,858998
+France,2010,866108
+France,2011,870125
+France,2012,921728
+France,2013,925789
+France,2014,937118
+France,2015,947085
+France,2016,958149
+Germany,2002,1001866
+Germany,2003,996493
+Germany,2004,1024372
+Germany,2005,1016213
+Germany,2006,1024047
+Germany,2007,1026914
+Germany,2008,1033421
+Germany,2009,1041947
+Germany,2010,1046778
+Germany,2011,1057771
+Germany,2012,1061115
+Germany,2013,1069861
+Germany,2014,1086166
+Germany,2015,1100374
+Germany,2016,1121952
+Hungary,2002,75233
+Hungary,2003,76408
+Hungary,2004,78073
+Hungary,2005,76518
+Hungary,2006,79214
+Hungary,2007,79199
+Hungary,2008,79277
+Hungary,2009,78550
+Hungary,2010,76537
+Hungary,2011,76316
+Hungary,2012,76467
+Hungary,2013,76631
+Hungary,2014,77900.677
+Hungary,2015,79829.9376
+Hungary,2016,82630.3571
+Iceland,2002,4583
+Iceland,2003,4711
+Iceland,2004,4855
+Iceland,2005,5145
+Iceland,2006,5455
+Iceland,2007,5730
+Iceland,2008,5587
+Iceland,2009,5647
+Iceland,2010,5596
+Iceland,2011,5392
+Iceland,2012,5454
+Iceland,2013,5611
+Iceland,2014,5899
+Iceland,2015,6296
+Iceland,2016,7301
+Italy,2002,854634
+Italy,2003,854529
+Italy,2004,865074
+Italy,2005,828056
+Italy,2006,829489
+Italy,2007,829493
+Italy,2008,828321
+Italy,2009,869742
+Italy,2010,847781
+Italy,2011,814617
+Italy,2012,726939
+Italy,2013,770877
+Italy,2014,795683
+Italy,2015,831065
+Italy,2016,859033
+Lithuania,2002,19040
+Lithuania,2003,22408
+Lithuania,2004,29382
+Lithuania,2005,38488
+Lithuania,2006,43186
+Lithuania,2007,42698
+Lithuania,2008,41341
+Lithuania,2009,38794
+Lithuania,2010,35290
+Lithuania,2011,32697
+Lithuania,2012,36981
+Lithuania,2013,36237
+Lithuania,2014,27411
+Lithuania,2015,27683
+Lithuania,2016,28611
+Moldova,2002,1653
+Moldova,2003,1992
+Moldova,2004,2295
+Moldova,2005,2414
+Moldova,2006,2677
+Moldova,2007,2943
+Moldova,2008,3085
+Moldova,2009,2723
+Moldova,2010,2816
+Moldova,2011,3096
+Moldova,2012,3182
+Moldova,2013,3334
+Moldova,2014,2977
+Moldova,2015,3015
+Moldova,2016,3128
+North Macedonia,2002,6689
+North Macedonia,2003,6876
+North Macedonia,2004,6116
+North Macedonia,2005,5816
+North Macedonia,2006,5492
+North Macedonia,2007,5627
+North Macedonia,2008,6148
+North Macedonia,2009,6163
+North Macedonia,2010,6822
+North Macedonia,2011,7675
+North Macedonia,2012,7209
+North Macedonia,2013,8024
+North Macedonia,2014,9323
+North Macedonia,2015,9441
+North Macedonia,2016,9344
+Norway,2002,60601
+Norway,2003,60903
+Norway,2004,61256
+Norway,2005,61062
+Norway,2006,62028
+Norway,2007,63901
+Norway,2008,65210
+Norway,2009,65824
+Norway,2010,65852
+Norway,2011,66777
+Norway,2012,67574
+Norway,2013,68484
+Norway,2014,70713
+Norway,2015,72344
+Norway,2016,72946
+Poland,2002,208624
+Poland,2003,212582
+Poland,2004,216585
+Poland,2005,219622
+Poland,2006,223841
+Poland,2007,229818
+Poland,2008,240538
+Poland,2009,245298
+Poland,2010,248382
+Poland,2011,247406
+Poland,2012,246569
+Poland,2013,247914
+Poland,2014,252205
+Poland,2015,255517
+Poland,2016,269267
+Russian Federation,2002,323306
+Russian Federation,2003,323368
+Russian Federation,2004,332734
+Russian Federation,2005,314224
+Russian Federation,2006,313549
+Russian Federation,2007,323759
+Russian Federation,2008,327769
+Russian Federation,2009,292767
+Russian Federation,2010,279513
+Russian Federation,2011,278309
+Russian Federation,2012,277918
+Russian Federation,2013,264896
+Russian Federation,2014,257380
+Russian Federation,2015,247266
+Russian Federation,2016,249047
+Slovak Republic,2002,35896
+Slovak Republic,2003,35297
+Slovak Republic,2004,34442
+Slovak Republic,2005,35746
+Slovak Republic,2006,35949
+Slovak Republic,2007,35896
+Slovak Republic,2008,35258
+Slovak Republic,2009,33979
+Slovak Republic,2010,34330
+Slovak Republic,2011,34656
+Slovak Republic,2012,34694
+Slovak Republic,2013,34806
+Slovak Republic,2014,35115
+Slovak Republic,2015,36210
+Slovak Republic,2016,37260
+Spain,2002,383787
+Spain,2003,392264
+Spain,2004,404036
+Spain,2005,412597
+Spain,2006,412411
+Spain,2007,424313
+Spain,2008,427444
+Spain,2009,430581
+Spain,2010,414987
+Spain,2011,412558
+Spain,2012,398052
+Spain,2013,394163
+Spain,2014,373245
+Spain,2015,390084
+Spain,2016,404313
+Sweden,2002,125218
+Sweden,2003,125918
+Sweden,2004,126735
+Sweden,2005,126646
+Sweden,2006,127568
+Sweden,2007,130432
+Sweden,2008,130306
+Sweden,2009,129981
+Sweden,2010,129090
+Sweden,2011,130672
+Sweden,2012,130271
+Sweden,2013,130410
+Sweden,2014,132785
+Sweden,2015,135042
+Sweden,2016,117043
+Switzerland,2002,96150
+Switzerland,2003,97283
+Switzerland,2004,98501
+Switzerland,2005,100081
+Switzerland,2006,101361
+Switzerland,2007,103191
+Switzerland,2008,105402.6842
+Switzerland,2009,108810.259
+Switzerland,2010,111596.3873
+Switzerland,2011,112871.1494
+Switzerland,2012,114249.5708
+Switzerland,2013,115809.4405
+Switzerland,2014,117730.3698
+Switzerland,2015,119547.0836
+Switzerland,2016,122087.7072
+United Kingdom,2002,767612.1531
+United Kingdom,2003,763580.6937
+United Kingdom,2004,763504
+United Kingdom,2005,760539
+United Kingdom,2006,766804
+United Kingdom,2007,771195
+United Kingdom,2008,770032
+United Kingdom,2009,766522
+United Kingdom,2010,758832
+United Kingdom,2011,762388
+United Kingdom,2012,772212
+United Kingdom,2013,770187
+United Kingdom,2014,789939
+United Kingdom,2015,797445
+United Kingdom,2016,809674
