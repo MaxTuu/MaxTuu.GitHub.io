@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "description": "total green house gas emmisions by source, tonnes of c02 per capita",
+  "description": "total green house gas emmisions by source, tonnes of c02",
 
   "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph1_pollutionSector_data.json"},
 
@@ -9,13 +9,30 @@
 
 "description": "Creating a transform. This calculates if the sector is energy, and if it is then sets it equal to the tonnes per capita. If sector is not energy, then sets equal to infinity as to make it bigger then energy",
   "transform": [{
-    "calculate": "if(datum.Sector === 'Energy', datum.tonnesPerCapita, 99999)",
-    "as": "sourceOrder"
+    "calculate": "if(datum.Sector === 'Energy' & datum.choice === 'Tonnes of CO2', datum.Value/100000000000, if(datum.Sector === 'Energy' & datum.choice === 'Tonnes of CO2 per capita', datum.Value, 9999999999999))" ,
+    "as": "sourceOrder"},
 
-  }],
+  {"filter": {"selection": "Value"}}
+  ],
+
+  "selection": {
+    "Value": {
+      "type": "single",
+      "fields": ["choice"],
+      "bind": {
+        "input": "select",
+        "options": [
+          "Tonnes of CO2",
+          "Tonnes of CO2 per capita"
+        ],
+        "name": "Units:"
+      }
+    }
+  },
+
   "encoding": {
     "x": {"field": "Country", "type": "nominal", "sort": {"field": "sourceOrder", "order": "descending"}},
-    "y": {"field": "tonnesPerCapita", "type":"quantitative"},
+    "y": {"field": "Value", "type":"quantitative"},
     "color": {"field": "Sector"},
     "order": {"field": "sourceOrder"}
   }
