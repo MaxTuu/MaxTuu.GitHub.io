@@ -1,22 +1,50 @@
 <!DOCTYPE html>
 
+<!-- ///////////////////  HEAD //////////////////////////////////// -->
+
 <head>
 
-    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="index.css">
 
     <!--The next three lines allow the Vega embed-->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
 
     <!--fonts-->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
     </style>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+    </style>
 
 
 </head>
 
+<title>
+   Max Moore - Project
+</title>
+
 <body>
-    <p>project page</p>
+    <h1>Project</h1>
+    
+    <h3> [Current work in progress] </h3>
+
+    <!-- ///////////////////////////////////////////Graph 1/////////////////////////////////////////////-->
+    
+    <h3>Graph 1</h3>
+    <p>pollution by sector</p>
+
+    <!--Chart 1 -->
+    <div class="chart" id="chart1">
+        <script>
+            var myChart1 = "week1_chart1.json";
+            vegaEmbed('#chart1', myChart1);
+        </script>
+        <div style="border:1px solid grey;"></div>
+    </div>
+    
+    
+    
 </body>
