@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "description": "total green house gas emmisions by source, tonnes of c02 per capita",
+
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph1_pollutionSector_data.json"},
+
+  "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
+
+"description": "Creating a transform. This calculates if the sector is energy, and if it is then sets it equal to the tonnes per capita. If sector is not energy, then sets equal to infinity as to make it bigger then energy",
+  "transform": [{
+    "calculate": "if(datum.Sector === 'Energy', datum.tonnesPerCapita, 99999)",
+    "as": "sourceOrder"
+
+  }],
+  "encoding": {
+    "x": {"field": "Country", "type": "nominal", "sort": {"field": "sourceOrder", "order": "descending"}},
+    "y": {"field": "tonnesPerCapita", "type":"quantitative"},
+    "color": {"field": "Sector"},
+    "order": {"field": "sourceOrder"}
+  }
+}
