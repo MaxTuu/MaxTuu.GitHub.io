@@ -7,28 +7,22 @@
 
   "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
 
-"description": "Creating a transform. This calculates if the sector is energy, and if it is then sets it equal to the tonnes per capita. If sector is not energy, then sets equal to infinity as to make it bigger then energy",
+
   "transform": [{
     "calculate": "if(datum.Sector === 'Energy' & datum.choice === 'Tonnes of CO2', datum.Value/100000000000, if(datum.Sector === 'Energy' & datum.choice === 'Tonnes of CO2 per capita', datum.Value, 9999999999999))" ,
     "as": "sourceOrder"},
 
-  {"filter": {"selection": "Value"}}
+  {"filter": {"param": "choice"}}
   ],
 
-  "selection": {
-    "Value": {
-      "type": "single",
-      "fields": ["choice"],
-      "bind": {
-        "input": "select",
-        "options": [
-          "Tonnes of CO2",
-          "Tonnes of CO2 per capita"
-        ],
-        "name": "Units:"
-      }
+  "params": [
+    {
+      "name": "choice",
+      "select": {"type": "point", "fields":["choice"]},
+      "bind": {"input": "select", "options":["Tonnes of CO2","Tonnes of CO2 per capita"]}
     }
-  },
+  ],
+
 
   "encoding": {
     "x": {"field": "Value", "type": "quantitative"},
