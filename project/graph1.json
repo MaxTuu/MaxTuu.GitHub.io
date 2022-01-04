@@ -5,7 +5,13 @@
 
   "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph1_pollutionSector_data.json"},
 
-  "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
+  "mark": {
+    "type": "bar", 
+    "cornerRadiusBottomRight": 2, 
+    "cornerRadiusTopRight": 2,     
+    "stroke": "black",
+    "cursor": "pointer"
+    },
 
 
   "transform": [{
@@ -19,8 +25,18 @@
     {
       "name": "choice",
       "select": {"type": "point", "fields":["choice"]},
-      "bind": {"input": "select", "options":["Tonnes of CO2","Tonnes of CO2 per capita"]}
-    }
+      "bind": {"input": "select", "options":["Tonnes of CO2","Tonnes of CO2 per capita"]},
+      "value" : "Tonnes of CO2 per capita"
+    },
+    {
+      "name": "highlight",
+      "select": {"type": "point",  "fields": ["Country"],"on": "mouseover"},
+      "value":null
+    },
+    {
+      "name": "select", 
+      "select": {"type": "point", "fields": ["Country"]}
+      }
   ],
 
 
@@ -28,6 +44,25 @@
     "x": {"field": "Value", "type": "quantitative"},
     "y": {"field": "Country", "type":"nominal", "sort": {"field": "sourceOrder", "order": "descending"}},
     "color": {"field": "Sector"},
-    "order": {"field": "sourceOrder"}
+    "order": {"field": "sourceOrder"},
+    "fillOpacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 1
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 0.5
+        }
+      ],
+      "value": 0
+    }
   }
 }
