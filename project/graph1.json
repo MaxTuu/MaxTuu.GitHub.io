@@ -31,8 +31,8 @@
   },
 
   "encoding": {
-    "x": {"field": "Country", "type": "nominal", "sort": {"field": "sourceOrder", "order": "descending"}},
-    "y": {"field": "Value", "type":"quantitative"},
+    "x": {"field": "Value", "type": "quantitative"},
+    "y": {"field": "Country", "type":"nominal", "sort": {"field": "sourceOrder", "order": "descending"}},
     "color": {"field": "Sector"},
     "order": {"field": "sourceOrder"}
   }
