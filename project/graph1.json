@@ -1,7 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "description": "total green house gas emmisions by source, tonnes of c02",
+  "params": [
+    {
+      "name": "togglePoint",
+      "bind": {"input": "checkbox"}
+    }
+  ],
+
+
+"hconcat":[
+
+  {
+    "description": "GRAPH 1, total green house gas emmisions by source, tonnes of c02",
 
   "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph1_pollutionSector_data.json"},
 
@@ -12,7 +23,6 @@
     "stroke": "black",
     "cursor": "pointer"
     },
-
 
   "transform": [{
     "calculate": "if(datum.Sector === 'Energy' & datum.choice === 'Tonnes of CO2', datum.Value/100000000000, if(datum.Sector === 'Energy' & datum.choice === 'Tonnes of CO2 per capita', datum.Value, 9999999999999))" ,
@@ -39,7 +49,6 @@
       }
   ],
 
-
   "encoding": {
     "x": {"field": "Value", "type": "quantitative"},
     "y": {"field": "Country", "type":"nominal", "sort": {"field": "sourceOrder", "order": "descending"}},
@@ -65,4 +74,53 @@
       "value": 0
     }
   }
+
+},
+
+{
+
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph2_energyConsumption_data.json"},
+
+    "transform": [
+    {"filter": {"param": "select"}}
+  ],
+
+
+
+  "layer":[
+    {
+    "mark": {"type": "circle"},
+
+
+
+    "encoding":{
+      "y": {"field": "totalEnergyConsumption", "title": "Total Energy Consumption"},
+      "fillOpacity":{
+        "condition": {"param": "togglePoint"},
+        "value": 0
+      }
+      }
+    },
+
+    {
+    "mark": {"type": "line"},
+    "encoding":{
+      "y": {"field": "predictOLS", "title": "OLS trend"}
+      }
+    }
+  ],
+
+
+
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal"},
+    "y": {"type": "quantitative", "scale": {"zero": false}},
+    "color": {"field": "Country", "type": "nominal"}
+  }
+
+
+}
+
+]
+
 }
