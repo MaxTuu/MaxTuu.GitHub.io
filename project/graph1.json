@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "params": [
+  "params": 
+  [
     {
       "name": "togglePoint",
       "bind": {"input": "checkbox"}
@@ -9,119 +10,154 @@
   ],
 
 
-"hconcat":[
-
-  {
-    "description": "GRAPH 1, total green house gas emmisions by source, tonnes of c02",
-
-  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph1_pollutionSector_data.json"},
-
-  "mark": {
-    "type": "bar", 
-    "cornerRadiusBottomRight": 2, 
-    "cornerRadiusTopRight": 2,     
-    "stroke": "black",
-    "cursor": "pointer"
-    },
-
-  "transform": [{
-    "calculate": "if(datum.Sector === 'Energy' & datum.choice === 'Tonnes of CO2', datum.Value/100000000000, if(datum.Sector === 'Energy' & datum.choice === 'Tonnes of CO2 per capita', datum.Value, 9999999999999))" ,
-    "as": "sourceOrder"},
-
-  {"filter": {"param": "choice"}}
-  ],
-
-  "params": [
+  "hconcat":
+  [
     {
-      "name": "choice",
-      "select": {"type": "point", "fields":["choice"]},
-      "bind": {"input": "select", "options":["Tonnes of CO2","Tonnes of CO2 per capita"]},
-      "value" : "Tonnes of CO2 per capita"
-    },
-    {
-      "name": "highlight",
-      "select": {"type": "point",  "fields": ["Country"],"on": "mouseover"},
-      "value":null
-    },
-    {
-      "name": "select", 
-      "select": {"type": "point", "fields": ["Country"]}
-      }
-  ],
+      "description": "GRAPH 1, total green house gas emmisions by source, tonnes of c02",
 
-  "encoding": {
-    "x": {"field": "Value", "type": "quantitative"},
-    "y": {"field": "Country", "type":"nominal", "sort": {"field": "sourceOrder", "order": "descending"}},
-    "color": {"field": "Sector"},
-    "order": {"field": "sourceOrder"},
-    "fillOpacity": {
-      "condition": {"param": "select", "value": 1},
-      "value": 0.3
-    },
-    "strokeWidth": {
-      "condition": [
+      "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph1_pollutionSector_data.json"},
+
+      "mark": {
+      "type": "bar", 
+      "cornerRadiusBottomRight": 2, 
+      "cornerRadiusTopRight": 2,     
+      "stroke": "black",
+      "cursor": "pointer"
+      },
+
+      "transform": 
+      [
         {
-          "param": "select",
-          "empty": false,
-          "value": 1
+          "calculate": "if(datum.Sector === 'Energy' & datum.choice === 'Tonnes of CO2', datum.Value/100000000000, if(datum.Sector === 'Energy' & datum.choice === 'Tonnes of CO2 per capita', datum.Value, 9999999999999))" ,
+          "as": "sourceOrder"
         },
+
+        {"filter": {"param": "choice"}}
+      ],
+
+      "params": 
+      [
         {
-          "param": "highlight",
-          "empty": false,
-          "value": 0.5
+          "name": "choice",
+          "select": {"type": "point", "fields":["choice"]},
+         "bind": {"input": "select", "options":["Tonnes of CO2","Tonnes of CO2 per capita"]},
+         "value" : "Tonnes of CO2 per capita"
+        },
+
+        {
+          "name": "highlight",
+          "select": {"type": "point",  "fields": ["Country"],"on": "mouseover"},
+          "value":null
+        },
+
+        {
+          "name": "select", 
+          "select": {"type": "point", "fields": ["Country"]}
         }
       ],
-      "value": 0
-    }
-  }
 
-},
+      "encoding": 
+      {
+        "x": {"field": "Value", "type": "quantitative"},
+        "y": {"field": "Country", "type":"nominal", "sort": {"field": "sourceOrder", "order": "descending"}},
+        "color": {"field": "Sector"},
+        "order": {"field": "sourceOrder"},
+        "fillOpacity": 
+        {
+          "condition": {"param": "select", "value": 1},
+          "value": 0.3
+        },
+        "strokeWidth": 
+        {
+          "condition": 
+          [
+            {
+             "param": "select",
+              "empty": false,
+              "value": 1
+            },
+            {
+              "param": "highlight",
+              "empty": false,
+              "value": 0.5
+            }
+          ],
 
-{
+          "value": 0
 
-  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph2_data.json"},
-
-    "transform": [
-    {"filter": {"param": "select"}}
-  ],
-
-
-
-  "layer":[
-    {
-    "mark": {"type": "circle"},
-
-
-
-    "encoding":{
-      "y": {"field": "totalEnergyConsumption", "title": "Total Energy Consumption"},
-      "fillOpacity":{
-        "condition": {"param": "togglePoint"},
-        "value": 0
+        }
       }
-      }
+
     },
 
-    {
-    "mark": {"type": "line"},
-    "encoding":{
-      "y": {"field": "MA", "title": "OLS trend"}
-      }
+
+    {"vconcat": 
+      [
+
+        {
+
+          "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph2_data.json"},
+
+          "transform": [{"filter": {"param": "select"}}],
+
+          "layer":
+          [
+            {"mark": {"type": "circle"},
+
+            "encoding":
+              {
+              "y": {"field": "totalEnergyConsumption", "title": "Total Energy Consumption"},
+              "fillOpacity":
+              {
+                  "condition": {"param": "togglePoint"},
+                "value": 0
+                }
+              }
+            },
+
+            {
+              "mark": {"type": "line"},
+            "encoding":{"y": {"field": "MA", "title": "OLS trend"}}
+            }
+          ],
+
+          "encoding": 
+          {
+          "x": {"field": "Year", "type": "temporal"},
+          "y": {"type": "quantitative", "scale": {"zero": false}},
+            "color": {"field": "Country", "type": "nominal"}
+          }
+        },
+
+
+        {
+        "description": "shows energy production by source, the null defualt selection shows energy source for all contries combined",
+
+          "width": 300, "height": 200,
+
+          "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph3_data.json"},
+
+          "mark": "area",
+
+        "transform": [{"filter": {"param": "select"}}],
+      
+          "encoding": 
+          {
+            "x": {"field": "Year"},
+            "y": 
+            {
+              "field": "Value",
+              "aggregate": "sum",
+              "stack": "center",
+              "axis": null
+            },
+            "color": {"field":"Energy Source", "scale":{"scheme": "category20b"}}
+          }
+
+        }
+      ]
     }
-  ],
 
-
-
-  "encoding": {
-    "x": {"field": "Year", "type": "temporal"},
-    "y": {"type": "quantitative", "scale": {"zero": false}},
-    "color": {"field": "Country", "type": "nominal"}
-  }
-
-
-}
-
-]
-
+  ]
 
 }
