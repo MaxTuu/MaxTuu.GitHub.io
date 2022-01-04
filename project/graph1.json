@@ -79,7 +79,7 @@
 
 {
 
-  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph2_energyConsumption_data.json"},
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph2_data.json"},
 
     "transform": [
     {"filter": {"param": "select"}}
@@ -105,7 +105,7 @@
     {
     "mark": {"type": "line"},
     "encoding":{
-      "y": {"field": "predictOLS", "title": "OLS trend"}
+      "y": {"field": "MA", "title": "OLS trend"}
       }
     }
   ],
@@ -122,5 +122,6 @@
 }
 
 ]
+
 
 }
