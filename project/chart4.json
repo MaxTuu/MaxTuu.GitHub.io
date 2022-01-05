@@ -8,7 +8,7 @@
     "format": {"type": "topojson", "feature": "continent_Europe_subunits"}
   },
 
-
+    "resolve": {"scale": {"color": "independent"}},
 
   "params": 
   [
@@ -32,8 +32,7 @@
         {
           "field": "properties.Average", 
           "type": "quantitative",
-          "scale": {"scheme": "cividis"},
-          "legend": null
+          "scale": {"scheme": "cividis"}
         }
       }
     },
@@ -41,12 +40,11 @@
       "mark": {"type": "geoshape", "opacity": {"expr": "choice"}},
       "encoding": 
       {
-        "fill": 
+        "color": 
         {
           "field": "properties.temperatureAnomaly", 
           "type": "quantitative", 
-          "scale": {"scheme": "yelloworangered"},
-          "legend": null
+          "scale": {"scheme": "yelloworangered"}
         }
       }
     }
