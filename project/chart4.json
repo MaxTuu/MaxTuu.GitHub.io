@@ -45,7 +45,7 @@
         {
           "field": "properties.temperatureAnomaly", 
           "type": "quantitative", 
-          "scale": {"scheme": "orangered"},
+          "scale": {"scheme": "yelloworangered"},
           "legend": null
         }
       }
