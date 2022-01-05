@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph6_topo.json",
+    "format": {"type": "topojson", "feature": "continent_Europe_subunits"}
+  },
+
+
+
+  "params": 
+  [
+    {
+      "name": "choice",
+      "value": 0,
+      "bind": {"input": "select", "options":[0,1]}
+    }
+  ],
+
+
+  "projection": {"type": "naturalEarth1"},
+
+  "layer": 
+  [
+    {
+      "mark": {"type": "geoshape", "opacity": {"expr": "1-choice"}},
+      "encoding": 
+      {
+        "color": 
+        {
+          "field": "properties.Average", 
+          "type": "quantitative",
+          "scale": {"scheme": "cividis"},
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {"type": "geoshape", "opacity": {"expr": "choice"}},
+      "encoding": 
+      {
+        "fill": 
+        {
+          "field": "properties.temperatureAnomaly", 
+          "type": "quantitative", 
+          "scale": {"scheme": "orangered"},
+          "legend": null
+        }
+      }
+    }
+  ]
+}
