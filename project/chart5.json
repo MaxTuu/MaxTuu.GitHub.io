@@ -1,0 +1,97 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+  
+  "params": [{
+    "name": "country",
+    "select": {"type": "point", "fields": ["Country"]},
+    "bind": "legend"
+  }],
+
+  "resolve": {"scale": {"color": "independent"}},
+  
+
+  "vconcat": 
+  [
+
+
+
+    {
+      "mark": "line",
+
+      "transform": [{"filter": {"param": "country"}}],
+
+      "data": 
+      {
+        "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph7_totalPop_data.json"
+      },
+
+      "encoding": {
+        "x": {
+          
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          
+          "field": "totalPop",
+          "type": "quantitative"
+        },
+        "color": {"field": "Country", "scale": {"scheme": "inferno"}}
+      }
+    },
+
+
+
+
+
+    {
+      "data":       
+      {
+        "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph7_popGrowth_data.json"
+      },
+
+      "transform": [{"filter": {"param": "country"}}],
+
+
+      "mark": "bar",
+
+  
+      "encoding": {
+
+        "x": {
+          "field": "Start Year", "type": "quantitative",
+          "axis": {
+            "domain": false,
+            "ticks": false,
+            "labelAngle": 0,
+            "labelPadding": 4
+          }
+        },
+
+        "y": 
+        {
+          "field": "Growth", "type": "quantitative",
+          "axis": 
+          {
+            "gridColor": 
+            {
+              "condition": 
+              {"test": "datum.value === 0", 
+              "value": "black"},
+              "value": "#ddd"
+            }
+          }
+        },
+
+        "color": 
+        {
+          "field": "Growth", 
+          "scale": {"scheme": "redyellowgreen"},
+          "legend": null
+        }
+
+      }
+    }
+  ]
+}
