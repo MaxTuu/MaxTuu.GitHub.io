@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph5_data.json"
+  },
+
+  "mark": "point",
+
+  "params": 
+  [
+    { 
+      "name": "yearSlide", "value": 2010, 
+      "select": {"type": "point", "fields": ["Year"]},
+      "bind": {
+        "Year": {"input": "range", "min": 2010, "max": 2020, "step": 1}}
+    }
+  ],
+
+  "transform": 
+  [
+    {"filter": {"param": "yearSlide"}}
+  ],
+
+  "encoding": {
+    "x": {
+      "field": "GDP Growth",
+      "type": "quantitative",
+      "scale": {"zero": false}
+    },
+    "y": {
+      "field": "Employment Rate Change",
+      "type": "quantitative",
+      "scale": {"zero": false}
+    },
+
+    "color": {"field": "Employment", "type": "quantitative", "scale": {"scheme": "inferno"}},
+    "shape": {"field": "Year", "type": "nominal", "legend": null},
+    "size": {"field": "GDP", "type": "quantitative", "legend": null}
+  }
+}
