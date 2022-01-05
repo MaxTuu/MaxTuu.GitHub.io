@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph4_data.json"},
+
+  "facet": 
+  {
+    "field": "Country"
+  },
+  
+  "columns": 2,
+
+  "spec":
+  {
+    "layer":
+    [
+      {
+        "mark": "trail",
+        "encoding": 
+        {
+          "size": 
+          {
+            "field": "kmGrowth", 
+            "scale": {"rangeMin": 2, "rangeMax": 30}, 
+            "legend": null
+          }
+        }
+      },
+      
+      {
+        "mark": "line",
+        
+        "encoding": 
+        {
+          "color": {"field": "Country", "scale": {"scheme": "inferno"}}
+        }
+      }
+    ],
+
+    
+
+    "encoding": 
+    {
+      "x": 
+      {
+        "field": "Year",
+        "type": "nominal"
+      },
+      "y": 
+      {
+        "field": "cumGdpGrowth",
+        "type": "quantitative"
+      }
+    }
+  }
+}
