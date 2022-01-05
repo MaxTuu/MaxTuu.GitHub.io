@@ -10,6 +10,9 @@
   ],
 
 
+  "resolve": {"scale": {"color": "independent"}},
+
+
   "hconcat":
   [
     {
@@ -90,11 +93,16 @@
 
     },
 
-
+    
     {"vconcat": 
       [
-
         {
+
+
+
+          "resolve": {"scale": {"color": "independent"}},
+
+
 
           "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph2_data.json"},
 
@@ -123,9 +131,15 @@
 
           "encoding": 
           {
-          "x": {"field": "Year", "type": "temporal"},
-          "y": {"type": "quantitative", "scale": {"zero": false}},
-            "color": {"field": "Country", "type": "nominal"}
+            "x": {"field": "Year", "type": "temporal"},
+            "y": {"type": "quantitative", "scale": {"zero": false}},
+            "color": 
+            {
+              "field": "Country", 
+              "type": "nominal", 
+              "scale": {"scheme": "inferno"},
+              "legend": null
+            }
           }
         },
 
