@@ -1,14 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 500,
-  "height": 300,
-
-  "data": {
-    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph6_topo.json",
-    "format": {"type": "topojson", "feature": "continent_Europe_subunits"}
-  },
-
-    "resolve": {"scale": {"color": "independent"}},
+  "description": "Two vertically concatenated charts that show a histogram of precipitation in Seattle and the relationship between min and max temperature.",
 
   "params": 
   [
@@ -19,34 +11,60 @@
     }
   ],
 
+  "data": 
+  {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph6_topo.json",
+    "format": {"type": "topojson", "feature": "continent_Europe_subunits"}
+  },
+
+  "resolve": {"scale": {"color": "independent"}},
 
   "projection": {"type": "naturalEarth1"},
 
+  "width": 500,
+  "height": 500,
+
+
   "layer": 
   [
+
     {
-      "mark": {"type": "geoshape", "opacity": {"expr": "1-choice"}},
+      "mark": "geoshape",
+
+      "params": 
+      [
+        {
+          "name": "choice",
+          "value": 0,
+          "bind": {"input": "select", "options":[0,1]}
+        }
+      ],
+
       "encoding": 
       {
         "color": 
-        {
-          "field": "properties.Average", 
-          "type": "quantitative",
-          "scale": {"scheme": "cividis"}
-        }
+          {
+            "field": "properties.Average",
+            "type": "quantitative",
+            "scale": {"scheme": "cividis"},
+            "legend": null
+          }
       }
     },
+
     {
       "mark": {"type": "geoshape", "opacity": {"expr": "choice"}},
       "encoding": 
       {
         "color": 
         {
-          "field": "properties.temperatureAnomaly", 
-          "type": "quantitative", 
-          "scale": {"scheme": "yelloworangered"}
+          "field": "properties.temperatureAnomaly",
+          "type": "quantitative",
+          "scale": {"scheme": "yelloworangered"},
+          "legend": null
         }
       }
     }
   ]
+
 }
