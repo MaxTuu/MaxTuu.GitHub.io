@@ -1,57 +1,597 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
+    "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph4_data.json"},
 
-  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph4_data.json"},
-
-  "facet": 
+  "title": 
   {
-    "field": "Country"
+    "text": "A Bumpy Road",
+    "anchor": "middle",
+    "subtitle": "How GDP and Transport activity correlate "
   },
-  
-  "columns": 2,
 
-  "spec":
-  {
-    "layer":
+    "vconcat": 
     [
-      {
-        "mark": "trail",
-        "encoding": 
-        {
-          "size": 
-          {
-            "field": "kmGrowth", 
-            "scale": {"rangeMin": 2, "rangeMax": 30}, 
-            "legend": null
-          }
-        }
-      },
-      
-      {
-        "mark": "line",
-        
-        "encoding": 
-        {
-          "color": {"field": "Country", "scale": {"scheme": "inferno"}}
-        }
-      }
-    ],
 
+      {
+        "hconcat": 
+        [
+          {
+
+            "transform": [{"filter": "datum.Country == 'Croatia'"}],
+
+
+            "layer": 
+            [
+
+
+              {
+                  "mark": 
+                {
+                  "type": "line",
+                  "interpolate": "basis",
+                  "color": "red",
+                  "size": 25
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "ordinal"
+                  },
+                  "y": 
+                  {
+                     "field": "gdpGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+
+              {
+                  "mark": 
+                {
+                  "type": "line",
+                  "interpolate": "basis",
+                  "color": "white",
+                  "size": 15
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "ordinal"
+                  },
+                  "y": 
+                  {
+                     "field": "gdpGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+
+              {
+                  "mark": 
+                {
+                  "type": "line",
+                  "interpolate": "basis",
+                  "color": "blue",
+                  "size": 7
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "ordinal"
+                  },
+                  "y": 
+                  {
+                     "field": "gdpGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+
+
+
+
+
+
+
+
+              {
+                "mark": 
+                {
+                  "type": "line", 
+                  "color": "#6C6977",
+                  "size": 10,
+                  "interpolate": "basis"
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "nominal"
+                  },
+                  "y": 
+                  {
+                    "field": "kmGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+              {
+                "mark": 
+                {
+                  "type": "line", 
+                  "strokeDash":[8,4],
+                  "size": 1,
+                  "color": "white",
+                  "interpolate": "basis"
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "nominal"
+                  },
+                  "y": 
+                  {
+                    "field": "kmGrowth",
+                    "type": "quantitative"
+                  }                  
+                }
+              }            
+
+
+
+
+                
+            ]
+          
+
+            
+
+          },
+
+
+
+          {
+
+            "transform": [{"filter": "datum.Country == 'Finland'"}],
+
+            "layer": 
+            [
+
+
+              {
+                  "mark": 
+                {
+                  "type": "line",
+                  "interpolate": "basis",
+                  "color": "black",
+                  "size": 25
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "ordinal"
+                  },
+                  "y": 
+                  {
+                     "field": "gdpGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+
+              {
+                  "mark": 
+                {
+                  "type": "line",
+                  "interpolate": "basis",
+                  "color": "white",
+                  "size": 22
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "ordinal"
+                  },
+                  "y": 
+                  {
+                     "field": "gdpGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+
+              {
+                  "mark": 
+                {
+                  "type": "line",
+                  "interpolate": "basis",
+                  "color": "blue",
+                  "size": 7
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "ordinal"
+                  },
+                  "y": 
+                  {
+                     "field": "gdpGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+
+
+
+
+
+
+
+
+              {
+                "mark": 
+                {
+                  "type": "line", 
+                  "color": "#6C6977",
+                  "size": 10,
+                  "interpolate": "basis"
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "nominal"
+                  },
+                  "y": 
+                  {
+                    "field": "kmGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+              {
+                "mark": 
+                {
+                  "type": "line", 
+                  "strokeDash":[8,4],
+                  "size": 1,
+                  "color": "white",
+                  "interpolate": "basis"
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "nominal"
+                  },
+                  "y": 
+                  {
+                    "field": "kmGrowth",
+                    "type": "quantitative"
+                  }                  
+                }
+              }            
+
+                
+            ]
+
+          
+          }
+
+
+        ]
+      },
     
 
-    "encoding": 
+
+
+
+
     {
-      "x": 
-      {
-        "field": "Year",
-        "type": "nominal"
-      },
-      "y": 
-      {
-        "field": "cumGdpGrowth",
-        "type": "quantitative"
-      }
+      "hconcat": 
+      [
+
+
+          {
+
+            "transform": [{"filter": "datum.Country == 'Germany'"}],
+
+            "layer": 
+            [
+
+
+              {
+                  "mark": 
+                {
+                  "type": "line",
+                  "interpolate": "basis",
+                  "color": "black",
+                  "size": 25
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "ordinal"
+                  },
+                  "y": 
+                  {
+                     "field": "gdpGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+
+              {
+                  "mark": 
+                {
+                  "type": "line",
+                  "interpolate": "basis",
+                  "color": "red",
+                  "size": 15
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "ordinal"
+                  },
+                  "y": 
+                  {
+                     "field": "gdpGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+
+              {
+                  "mark": 
+                {
+                  "type": "line",
+                  "interpolate": "basis",
+                  "color": "yellow",
+                  "size": 5
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "ordinal"
+                  },
+                  "y": 
+                  {
+                     "field": "gdpGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+
+
+
+
+
+
+
+
+              {
+                "mark": 
+                {
+                  "type": "line", 
+                  "color": "#6C6977",
+                  "size": 10,
+                  "interpolate": "basis"
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "nominal"
+                  },
+                  "y": 
+                  {
+                    "field": "kmGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+              {
+                "mark": 
+                {
+                  "type": "line", 
+                  "strokeDash":[8,4],
+                  "size": 1,
+                  "color": "white",
+                  "interpolate": "basis"
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "nominal"
+                  },
+                  "y": 
+                  {
+                    "field": "kmGrowth",
+                    "type": "quantitative"
+                  }                  
+                }
+              }            
+
+                
+            ]
+
+          },
+
+
+
+          {
+
+            "transform": [{"filter": "datum.Country == 'Spain'"}],
+
+            "layer": 
+            [
+
+
+              {
+                  "mark": 
+                {
+                  "type": "line",
+                  "interpolate": "basis",
+                  "color": "black",
+                  "size": 25
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "ordinal"
+                  },
+                  "y": 
+                  {
+                     "field": "gdpGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+
+              {
+                  "mark": 
+                {
+                  "type": "line",
+                  "interpolate": "basis",
+                  "color": "red",
+                  "size": 22
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "ordinal"
+                  },
+                  "y": 
+                  {
+                     "field": "gdpGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+
+              {
+                  "mark": 
+                {
+                  "type": "line",
+                  "interpolate": "basis",
+                  "color": "yellow",
+                  "size": 7
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "ordinal"
+                  },
+                  "y": 
+                  {
+                     "field": "gdpGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+
+
+
+
+
+
+
+
+              {
+                "mark": 
+                {
+                  "type": "line", 
+                  "color": "#6C6977",
+                  "size": 10,
+                  "interpolate": "basis"
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "nominal"
+                  },
+                  "y": 
+                  {
+                    "field": "kmGrowth",
+                    "type": "quantitative"
+                  }
+                }
+              },
+              {
+                "mark": 
+                {
+                  "type": "line", 
+                  "strokeDash":[8,4],
+                  "size": 1,
+                  "color": "white",
+                  "interpolate": "basis"
+                },
+                "encoding": 
+                {
+                  "x": 
+                  {
+                    "field": "Year",
+                    "type": "nominal"
+                  },
+                  "y": 
+                  {
+                    "field": "kmGrowth",
+                    "type": "quantitative"
+                  }                  
+                }
+              }            
+
+                
+            ]
+
+          }
+
+        
+      ]
     }
-  }
+
+
+
+
+
+
+  ]
+
+
 }
