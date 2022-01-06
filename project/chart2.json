@@ -7,7 +7,7 @@
   {
     "text": "A Bumpy Road",
     "anchor": "middle",
-    "subtitle": "How GDP and Transport activity correlate "
+    "subtitle": "How GDP growth and 'Transport activity' growth correlate "
   },
 
     "vconcat": 
@@ -19,6 +19,14 @@
           {
 
             "transform": [{"filter": "datum.Country == 'Croatia'"}],
+          
+            "title": "Croatia",
+
+            "encoding": 
+            {
+              "y": {"title": "Growth Rate"},
+              "x": {"axis": null}
+            },
 
 
             "layer": 
@@ -163,6 +171,15 @@
           {
 
             "transform": [{"filter": "datum.Country == 'Finland'"}],
+
+            "title": "Finland",
+
+            "encoding": 
+            {
+              
+              "y": {"title": null},
+              "x": {"axis": null}
+            },
 
             "layer": 
             [
@@ -314,6 +331,14 @@
 
             "transform": [{"filter": "datum.Country == 'Germany'"}],
 
+            "title": "Germany",
+
+            "encoding": 
+            {
+              "y": {"title": "Growth Rate"},
+              "x": {"title": null}
+            },
+
             "layer": 
             [
 
@@ -450,6 +475,14 @@
           {
 
             "transform": [{"filter": "datum.Country == 'Spain'"}],
+
+            "title": "Spain",
+
+            "encoding": 
+            {
+              "y": {"title": null},
+              "x": {"title": null}
+            },
 
             "layer": 
             [
