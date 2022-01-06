@@ -9,9 +9,11 @@
     }
   ],
 
+  "background": "white",
 
   "resolve": {"scale": {"color": "independent"}},
 
+  "title": "Energy! Energy! Energy!",
 
   "hconcat":
   [
@@ -20,13 +22,27 @@
 
       "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph1_pollutionSector_data.json"},
 
-      "mark": {
-      "type": "bar", 
-      "cornerRadiusBottomRight": 2, 
-      "cornerRadiusTopRight": 2,     
-      "stroke": "black",
-      "cursor": "pointer"
+      "mark": 
+      {
+        "type": "bar", 
+        "cornerRadiusBottomRight": 2, 
+        "cornerRadiusTopRight": 2,
+        "cornerRadiusBottomLeft": 4, 
+        "cornerRadiusTopLeft": 4,       
+        "stroke": "black",
+        "cursor": "pointer"
       },
+
+      "title": "Green House Gas Emissions By Sector",
+
+      "view": 
+      {
+        "stroke": null
+      },
+
+
+
+
 
       "transform": 
       [
@@ -35,16 +51,23 @@
           "as": "sourceOrder"
         },
 
+
         {"filter": {"param": "choice"}}
       ],
+
 
       "params": 
       [
         {
           "name": "choice",
           "select": {"type": "point", "fields":["choice"]},
-         "bind": {"input": "select", "options":["Tonnes of CO2","Tonnes of CO2 per capita"]},
-         "value" : "Tonnes of CO2 per capita"
+         "bind": 
+         {
+           "input": "select", 
+           "options":["Tonnes of CO2","Tonnes of CO2 per capita"], 
+           "name": "Select a unit of GHG emmisions:  "           
+          },
+          "value" : "Tonnes of CO2 per capita"
         },
 
         {
@@ -59,17 +82,55 @@
         }
       ],
 
+
       "encoding": 
       {
-        "x": {"field": "Value", "type": "quantitative"},
-        "y": {"field": "Country", "type":"nominal", "sort": {"field": "sourceOrder", "order": "descending"}},
-        "color": {"field": "Sector"},
+        "x": 
+        {
+          "field": "Value", 
+          "type": "quantitative",
+          "axis": null
+        },
+
+        "y": 
+        {
+          "field": "Country", 
+          "type":"nominal", 
+          "sort": {"field": "sourceOrder", "order": "descending"},
+          "title": null,
+          "axis": {"grid": false}
+        },
+
+        "color": 
+        {
+          "field": "Sector",
+          "scale": {"range":["#837972", "#E3B23C","#978E87", "#AAA39D","#BDB8B3"]}
+        },
+
+        "tooltip": 
+        [
+          {
+            "field": "Country"
+          },
+          {
+            "field": "Sector"
+          },
+          {
+            "field": "Value",
+            "title": "GHG Emission",
+            "format": ".2f"
+          }
+        ],
+
+
         "order": {"field": "sourceOrder"},
+
         "fillOpacity": 
         {
           "condition": {"param": "select", "value": 1},
           "value": 0.3
         },
+
         "strokeWidth": 
         {
           "condition": 
@@ -86,7 +147,7 @@
             }
           ],
 
-          "value": 0
+          "value": 0.1
 
         }
       }
