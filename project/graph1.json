@@ -43,6 +43,8 @@
         "subtitleFontSize": 10
       },
 
+      "height": 702,
+
       "view": 
       {
         "stroke": null
@@ -108,7 +110,14 @@
         "color": 
         {
           "field": "Sector",
-          "scale": {"range":["#837972", "#E3B23C","#978E87", "#AAA39D","#BDB8B3"]}
+          "scale": {"range":["#837972", "#E3B23C","#978E87", "#AAA39D","#BDB8B3"]},
+          "legend": 
+          {
+            "orient": "right",
+            "direction": "vertical",
+            "legendY": 600,
+            "legendX": 100
+          }
         },
 
         "tooltip": 
@@ -176,7 +185,7 @@
           "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph2_data.json"},
 
           "height": 300,
-          "width": 300,
+          "width": 400,
 
           "title": 
           {
@@ -189,26 +198,58 @@
 
           "layer":
           [
-            {"mark": {"type": "circle"},
+            {
+              "mark": {"type": "circle"},
 
-            "encoding":
+              "encoding":
               {
                 "y": {"field": "totalEnergyConsumption"},
                 "fillOpacity":
                 {
                   "condition": {"param": "togglePoint"},
                   "value": 0
-                }
+                },
+                "tooltip": {"field": "totalEnergyConsumption"}
               }
             },
 
+            {
+              "mark": {"type": "circle"},
+
+              "encoding":
               {
-                "mark": {"type": "line"},
-                "encoding":{"y": {"field": "MA"}
+                "y": {"field": "totalEnergyConsumption"},
+                "size": {"value": 200},
+                "fillOpacity":
+                {
+                  "value": 0
+                },
+                "tooltip": {"field": "totalEnergyConsumption"}
+              }
+            },
+
+            {
+              "mark": {"type": "line"},
+              "encoding":
+              {
+               "y": {"field": "MA"},
+               "tooltip": {"field": "Country"}
+              }
+            },
+
+            {
+              "mark": {"type": "line", "strokeWidth": 15},
+              "encoding":
+              {
+               "y": {"field": "MA"},
+               "tooltip": {"field": "Country"},
+               "opacity": {"value": 0}
               }
             }
 
           ],
+
+
 
           "encoding": 
           {
@@ -268,13 +309,17 @@
 
           "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph3_data.json"},
 
-          "mark": "area",
+          "mark": {"type":"area"},
 
-        "transform": [{"filter": {"param": "select"}}],
+          "transform": [{"filter": {"param": "select"}}],
       
           "encoding": 
           {
-            "x": {"field": "Year", "type": "temporal"},
+            "x": 
+            {
+              "field": "Year", 
+              "type": "temporal", 
+              "title": null},
             "y": 
             {
               "field": "Value",
@@ -289,14 +334,16 @@
               "legend": 
               {
                 "orient": "none",
-                "labelAlign": "left",
-                "labelBaseline": "middle",
+                "direction": "vertical",
                 "labelOffset": 3,
-                "legendX": 420,
+                "legendX": 410,
                 "legendY": 380
               }
-            }
+            },
+            "tooltip": {"field": "Energy Source", "type": "nominal"}
           }
+
+          
 
         }
       ]
