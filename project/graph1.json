@@ -36,7 +36,12 @@
         "cursor": "pointer"
       },
 
-      "title": "Green House Gas Emissions By Sector",
+      "title": 
+      {
+        "text": "Energy: Europe's Worst Offender",
+        "subtitle": "Green house gas emissions by sector",
+        "subtitleFontSize": 10
+      },
 
       "view": 
       {
@@ -175,8 +180,8 @@
 
           "title": 
           {
-            "text": "Total Energy Consumption",
-            "subtitle": "(5 year moving average)",
+            "text": "Differing Trends Across Europe",
+            "subtitle": "Total 'final energy' consumption (5 year moving average)",
             "subtitleFontSize": 10
           },
 
@@ -218,7 +223,7 @@
               "type": "quantitative", 
               "scale": {"zero": false},
               "title": 
-              ["Final Energy Consumption,","million metric tons of oil equivalent"]
+              ["Million metric tons of oil equivalent"]
             },
             "color": 
             {
@@ -245,6 +250,13 @@
 
         {
         "description": "shows energy production by source, the null defualt selection shows energy source for all contries combined",
+
+          "title": 
+          {
+            "text":"The Growth Of Green",
+            "subtitle": ["Energy production by Source", "(Defualt view: each countries 'total production' combined)"],
+            "subtitleFontSize": 10
+          },
 
           "width": 400, 
           "height": 300,
@@ -273,16 +285,15 @@
             "color": 
             {
               "field":"Energy Source", 
-              "scale":{"scheme": "category20b"},
+              "scale":{"range":["#837972", "#AAA39D","#978E87", "#627F67","#BDB8B3"]},
               "legend": 
               {
                 "orient": "none",
                 "labelAlign": "left",
                 "labelBaseline": "middle",
                 "labelOffset": 3,
-                "legendX": -100,
-                "legendY": 335,
-                "values": ["Agriculture","Energy","Industry","Waste","Other"]
+                "legendX": 420,
+                "legendY": 380
               }
             }
           }
