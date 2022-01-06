@@ -5,7 +5,7 @@
   [
     {
       "name": "togglePoint",
-      "bind": {"input": "checkbox"}
+      "bind": {"input": "checkbox", "name": "Show energy consumption data points"}
     }
   ],
 
@@ -17,6 +17,9 @@
 
   "hconcat":
   [
+
+
+
     {
       "description": "GRAPH 1, total green house gas emmisions by source, tonnes of c02",
 
@@ -39,10 +42,6 @@
       {
         "stroke": null
       },
-
-
-
-
 
       "transform": 
       [
@@ -154,18 +153,32 @@
 
     },
 
+
+
+
+
+
+
+
+
     
     {"vconcat": 
       [
         {
 
-
-
           "resolve": {"scale": {"color": "independent"}},
 
-
-
           "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph2_data.json"},
+
+          "height": 300,
+          "width": 300,
+
+          "title": 
+          {
+            "text": "Total Energy Consumption",
+            "subtitle": "(5 year moving average)",
+            "subtitleFontSize": 10
+          },
 
           "transform": [{"filter": {"param": "select"}}],
 
@@ -175,40 +188,71 @@
 
             "encoding":
               {
-              "y": {"field": "totalEnergyConsumption", "title": "Total Energy Consumption"},
-              "fillOpacity":
-              {
+                "y": {"field": "totalEnergyConsumption"},
+                "fillOpacity":
+                {
                   "condition": {"param": "togglePoint"},
-                "value": 0
+                  "value": 0
                 }
               }
             },
 
-            {
-              "mark": {"type": "line"},
-            "encoding":{"y": {"field": "MA", "title": "OLS trend"}}
+              {
+                "mark": {"type": "line"},
+                "encoding":{"y": {"field": "MA"}
+              }
             }
+
           ],
 
           "encoding": 
           {
-            "x": {"field": "Year", "type": "temporal"},
-            "y": {"type": "quantitative", "scale": {"zero": false}},
+            "x": 
+            {
+              "field": "Year", 
+              "type": "temporal",
+              "title": null
+            },
+            "y": 
+            {
+              "type": "quantitative", 
+              "scale": {"zero": false},
+              "title": 
+              ["Final Energy Consumption,","million metric tons of oil equivalent"]
+            },
             "color": 
             {
               "field": "Country", 
               "type": "nominal", 
-              "scale": {"scheme": "inferno"},
+              "scale": 
+              {
+                "range":
+                ["#D69F1F", "#E3B23C","#B38519", "#E8BF5E","#EDCD82"
+                ]
+              },
               "legend": null
             }
           }
         },
 
 
+
+
+
+
+
+
+
         {
         "description": "shows energy production by source, the null defualt selection shows energy source for all contries combined",
 
-          "width": 300, "height": 200,
+          "width": 400, 
+          "height": 300,
+          "view": 
+          {
+            "strokeWidth": 2,
+            "stroke": "#837972"
+          },
 
           "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph3_data.json"},
 
@@ -218,7 +262,7 @@
       
           "encoding": 
           {
-            "x": {"field": "Year"},
+            "x": {"field": "Year", "type": "temporal"},
             "y": 
             {
               "field": "Value",
@@ -226,7 +270,21 @@
               "stack": "center",
               "axis": null
             },
-            "color": {"field":"Energy Source", "scale":{"scheme": "category20b"}}
+            "color": 
+            {
+              "field":"Energy Source", 
+              "scale":{"scheme": "category20b"},
+              "legend": 
+              {
+                "orient": "none",
+                "labelAlign": "left",
+                "labelBaseline": "middle",
+                "labelOffset": 3,
+                "legendX": -100,
+                "legendY": 335,
+                "values": ["Agriculture","Energy","Industry","Waste","Other"]
+              }
+            }
           }
 
         }
