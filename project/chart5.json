@@ -14,6 +14,8 @@
     "subtitleFontSize": 10
   },
 
+  "background": "#FeFeF8",    
+
 
   "params": [
     {
@@ -40,6 +42,7 @@
       "mark": "bar",
 
       "height": 100,
+      "width": 300,
 
   
       "encoding": {
@@ -88,6 +91,8 @@
 
       {
         "mark": "line",
+        "height": 300,
+        "width": 300,
 
         "transform": 
         [
@@ -120,7 +125,12 @@
           "color": 
           {
             "field": "Country", 
-            "scale": {"scheme": "inferno"},
+              "scale": 
+              {
+                "range":
+                ["#a80424", "#e8543c","#ffac64", "#ffec9c","#c8b46c"
+                ]
+              },
             "legend":
             {
               "title": "",
