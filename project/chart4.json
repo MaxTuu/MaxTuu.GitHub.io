@@ -8,6 +8,8 @@
     "subtitleFontSize": 10
   },
 
+  "background": "#FeFeF8",  
+
   "params": 
   [
     {
@@ -30,7 +32,6 @@
   "width": 500,
   "height": 500,
 
-
   "layer": 
   [
 
@@ -43,6 +44,12 @@
           "name": "choice",
           "value": 0,
           "bind": {"input": "select", "options":[0,1]}
+        },
+
+        {
+          "name": "highlight",
+          "select": {"type": "point",  "fields": ["Country"],"on": "mouseover"},
+          "value":null
         }
       ],
 
@@ -52,12 +59,22 @@
           {
             "field": "properties.Average",
             "type": "quantitative",
-            "scale": {"scheme": "cividis"},
+            "scale": 
+            {
+              "scheme": {"name": "cividis", "extent": [0,0.85]}
+            },
             "legend":
             {
-              "title": "Avg. Winter Temp"
+              "title": "Avg. Winter Temp (Celcius)",
+              "titleOrient": "right",
+              "orient": "none",
+              "legendY": 50,
+              "legendX": 500
             }
-          }
+          },
+
+          "stroke": {"value": "black"},
+          "tooltip": [{"field": "properties.geounit", "title": "Country"},{"field": "properties.Average", "title": "Avg. winter temp.", "format": ".2f"},{"field": "properties.temperatureAnomaly", "title": "Avg. temp. anomaly", "format": ".2f"}]
       }
     },
 
@@ -69,14 +86,23 @@
         {
           "field": "properties.temperatureAnomaly",
           "type": "quantitative",
-          "scale": {"scheme": "yelloworangered"},
+          "scale": 
+          {
+            "scheme": {"name": "yelloworangered", "extent": [0,1]}
+          },
           "legend": 
           {
             "labelOpacity": 1,
             "gradientOpacity": 1,
-            "title": "Avg. Anomaly Temp"
+            "title": "Avg. Anomaly Temp (Celcius)",
+            "titleOrient": "right",
+            "orient": "none",
+            "legendY": 280,
+            "legendX": 500
           }
-        }
+        },
+
+        "stroke": {"value": "black"}
       }
     }
   ]
