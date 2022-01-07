@@ -152,16 +152,16 @@
             {
              "param": "select",
               "empty": false,
-              "value": 1
+              "value": 1.5
             },
             {
               "param": "highlight",
               "empty": false,
-              "value": 0.5
+              "value": 1.5
             }
           ],
 
-          "value": 0.1
+          "value": 0.5
 
         }
       }
@@ -310,7 +310,9 @@
 
           "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph3_data.json"},
 
-          "mark": {"type":"area"},
+          "mark": {"type":"area", "interpolate": "basis",
+          "stroke": "black", "strokeWidth": 1
+          },
 
           "transform": [{"filter": {"param": "select"}}],
       
