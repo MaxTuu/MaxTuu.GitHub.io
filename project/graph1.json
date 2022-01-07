@@ -9,11 +9,12 @@
     }
   ],
 
-  "background": "white",
+  "background": "#FeFeF8 ",
 
   "resolve": {"scale": {"color": "independent"}},
 
   "title": "Energy! Energy! Energy!",
+
 
   "hconcat":
   [
@@ -110,10 +111,10 @@
         "color": 
         {
           "field": "Sector",
-          "scale": {"range":["#837972", "#E3B23C","#978E87", "#AAA39D","#BDB8B3"]},
+          "scale": {"range":["#706c74", "#c8b46c","#888474", "#BDB8B3","#b0a49c"]},
           "legend": 
           {
-            "orient": "right",
+            "orient": "bottom-right",
             "direction": "vertical",
             "legendY": 600,
             "legendX": 100
@@ -273,7 +274,7 @@
               "scale": 
               {
                 "range":
-                ["#D69F1F", "#E3B23C","#B38519", "#E8BF5E","#EDCD82"
+                ["#a80424", "#e8543c","#ffac64", "#ffec9c","#c8b46c"
                 ]
               },
               "legend": null
@@ -330,14 +331,14 @@
             "color": 
             {
               "field":"Energy Source", 
-              "scale":{"range":["#837972", "#AAA39D","#978E87", "#627F67","#BDB8B3"]},
+              "scale":{"range":["#837972", "#b0a49c","#978E87", "#627F67","#BDB8B3"]},
               "legend": 
               {
                 "orient": "none",
                 "direction": "vertical",
                 "labelOffset": 3,
                 "legendX": 410,
-                "legendY": 380
+                "legendY": 600
               }
             },
             "tooltip": {"field": "Energy Source", "type": "nominal"}
