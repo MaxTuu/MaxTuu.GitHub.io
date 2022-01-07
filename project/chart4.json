@@ -1,13 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Two vertically concatenated charts that show a histogram of precipitation in Seattle and the relationship between min and max temperature.",
+
+  "title": 
+  {
+    "text": "Scandinavia: How The Cold Is Getting Warmer",
+    "subtitle": "Comparing average winter temperature (Dec - Feb), and average temperature anomalies in January 2020",
+    "subtitleFontSize": 10
+  },
 
   "params": 
   [
     {
       "name": "choice",
       "value": 0,
-      "bind": {"input": "select", "options":[0,1]}
+      "bind": {"input": "select", "options":[0,1], "name": "Choose a measure:", "labels": ["Winter Temperature", "Temperature Anomaly"]}
     }
   ],
 
@@ -47,7 +53,10 @@
             "field": "properties.Average",
             "type": "quantitative",
             "scale": {"scheme": "cividis"},
-            "legend": null
+            "legend":
+            {
+              "title": "Avg. Winter Temp"
+            }
           }
       }
     },
@@ -61,7 +70,12 @@
           "field": "properties.temperatureAnomaly",
           "type": "quantitative",
           "scale": {"scheme": "yelloworangered"},
-          "legend": null
+          "legend": 
+          {
+            "labelOpacity": 1,
+            "gradientOpacity": 1,
+            "title": "Avg. Anomaly Temp"
+          }
         }
       }
     }
