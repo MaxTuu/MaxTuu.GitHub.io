@@ -1,9 +1,21 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "data": {
+
+  "data": 
+  {
     "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph5_data.json"
   },
+
+  "title": 
+  {
+    "text": "Okun's Law",
+    "anchor": "middle",
+    "subtitle": "GDP growth and change in Employment rate"
+  },
+
+
+  "transform": [{"filter": "datum.Year > 2015"}],
 
   "mark": 
   {
@@ -16,14 +28,14 @@
   "params": 
   [
     { 
-      "name": "yearSlide", "value": 2010, 
+      "name": "yearSlide", "value": 2016, 
       "select": {"type": "point", "fields": ["Year"]},
       "bind": 
       {
         "Year": 
         {
           "input": "range", 
-          "min": 2010, 
+          "min": 2016, 
           "max": 2020, 
           "step": 1,
           "name": "Pick a year to highlight:"
@@ -46,12 +58,13 @@
 
     "color": 
     {
-      "field": "Employment", 
+      "field": "Employment Rate Change", 
       "type": "quantitative", 
-      "scale": {"scheme": "redyellowgreen"}
+      "scale": {"scheme": "redyellowgreen"},
+      "legend": null
     },
 
-    "shape": {"field": "Country", "type": "nominal", "legend": null},
+
     "size": 
     {
       "field": "GDP", 
@@ -66,8 +79,11 @@
       {
         "param": "yearSlide", "value": 1
       },
-      "value": 0
+      "value": 0.1
     }
 
   }
+
+
+
 }
