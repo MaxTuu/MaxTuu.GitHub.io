@@ -11,7 +11,7 @@
   {
     "text": "Okun's Rule of Thumb",
     "anchor": "middle",
-    "subtitle": "GDP growth and change in Employment rate"
+    "subtitle": ["Correlation between GDP growth and change in Employment rate","(Left click and scroll to explore the scatter plot)"]
   },
 
   "background": "#FeFeF8",
@@ -97,6 +97,13 @@
     },
 
     "stroke": {"value": "black"},
+    "strokeOpacity":     {
+      "condition": 
+      {
+        "param": "yearSlide", "value": 1
+      },
+      "value": 0
+    },
 
     "tooltip": [{"field": "Country"},{"field": "Year"},{"field": "GDP", "title": "GDP (Million euro)"},{"field": "Employment", "title": "Employment Rate"},{"field": "GDP Growth", "format": ".2f"},{"field": "Employment Rate Change", "format": ".2f"}]
 
