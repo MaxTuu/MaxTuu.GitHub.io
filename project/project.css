@@ -2,7 +2,7 @@
 /* This is my first proper css file */
 
 body{
-    background-color: #F2DFCE;
+    background-color: #FeFeF8;
     max-width: auto;
     margin: auto;
     text-align: center;
@@ -20,7 +20,7 @@ h3{font-size:30px}
 p{font-size:20px}
 
 .chart{
-    background-color: #F2DFCE;
+    background-color: #FeFeF8;
     width: auto;
     margin: auto;
     border-width: 10px;
