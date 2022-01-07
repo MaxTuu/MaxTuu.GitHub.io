@@ -1,12 +1,27 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   
-  
-  "params": [{
-    "name": "country",
-    "select": {"type": "point", "fields": ["Country"]},
-    "bind": "legend"
-  }],
+
+  "title":
+  {
+    "text": "The Rise and Fall of Population",
+    "anchor": "middle",
+    "subtitle": 
+    [
+      "Historic and predicted population trends.",
+      "Select a country from the legend to isolate its trend"
+    ],
+    "subtitleFontSize": 10
+  },
+
+
+  "params": [
+    {
+      "name": "country",
+      "select": {"type": "point", "fields": ["Country"]},
+      "bind": "legend"
+    }
+  ],
 
   "resolve": {"scale": {"color": "independent"}},
   
@@ -15,58 +30,25 @@
   [
 
 
-
-    {
-      "mark": "line",
-
-      "transform": [{"filter": {"param": "country"}}],
-
-      "data": 
-      {
-        "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph7_totalPop_data.json"
-      },
-
-      "encoding": {
-        "x": {
-          
-          "field": "Year",
-          "type": "temporal"
-        },
-        "y": {
-          
-          "field": "totalPop",
-          "type": "quantitative"
-        },
-        "color": {"field": "Country", "scale": {"scheme": "inferno"}}
-      }
-    },
-
-
-
-
-
     {
       "data":       
       {
         "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph7_popGrowth_data.json"
       },
 
-      "transform": [{"filter": {"param": "country"}}],
-
 
       "mark": "bar",
+
+      "height": 100,
 
   
       "encoding": {
 
         "x": {
-          "field": "Start Year", "type": "quantitative",
-          "axis": {
-            "domain": false,
-            "ticks": false,
-            "labelAngle": 0,
-            "labelPadding": 4
-          }
+          "field": "Start Year", 
+          "type": "quantitative",
+          "axis": null
+          
         },
 
         "y": 
@@ -89,9 +71,66 @@
           "field": "Growth", 
           "scale": {"scheme": "redyellowgreen"},
           "legend": null
+        },
+
+        "opacity": 
+        {
+          "condition": {"param": "country", "value": 1},
+          "value": 0
         }
 
       }
-    }
+    },    
+
+
+
+
+
+      {
+        "mark": "line",
+
+        "transform": 
+        [
+          {
+            "filter": {"param": "country"}
+          }
+        ],
+
+        "data": 
+        {
+          "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph7_totalPop_data.json"
+        },
+
+        "encoding": 
+        {
+          "x": {
+            
+            "field": "Year",
+            "type": "temporal",
+            "title": null
+            
+          },
+          "y": {
+            
+            "field": "totalPop",
+            "type": "quantitative",
+            "title": "Population (thousands)"
+          },
+          "color": 
+          {
+            "field": "Country", 
+            "scale": {"scheme": "inferno"},
+            "legend":
+            {
+              "title": "",
+              "orient": "bottom",
+              "legendX": 100,
+              "legendY": 0,
+              "columns": 3
+            }
+          },
+          "tooltip": {"field": "Country"}
+        }
+      }
   ]
 }
