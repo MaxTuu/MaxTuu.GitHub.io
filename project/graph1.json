@@ -296,7 +296,7 @@
           "title": 
           {
             "text":"The Growth Of Green",
-            "subtitle": ["Energy production by Source", "(Defualt view: each countries 'total production' combined)"],
+            "subtitle": ["Energy production by Source", "(Defualt view: each countries 'total production' combined. Russia, Belarus, and Swiss data missing)"],
             "subtitleFontSize": 10
           },
 
