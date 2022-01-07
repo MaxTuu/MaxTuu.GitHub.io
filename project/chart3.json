@@ -9,51 +9,59 @@
 
   "title": 
   {
-    "text": "Okun's Law",
+    "text": "Okun's Rule of Thumb",
     "anchor": "middle",
     "subtitle": "GDP growth and change in Employment rate"
   },
 
+  "background": "#FeFeF8",
 
-  "transform": [{"filter": "datum.Year > 2015"}],
+
 
   "mark": 
   {
     "type": "point",
     "filled": true
   },
-  "width": 300,
-  "height": 300,
+  "width": 400,
+  "height": 400,
 
   "params": 
   [
     { 
-      "name": "yearSlide", "value": 2016, 
+      "name": "yearSlide", "value": 2010, 
       "select": {"type": "point", "fields": ["Year"]},
       "bind": 
       {
         "Year": 
         {
           "input": "range", 
-          "min": 2016, 
+          "min": 2010, 
           "max": 2020, 
           "step": 1,
           "name": "Pick a year to highlight:"
         }
       }
-    }
+    },
+
+    {
+    "name": "grid",
+    "select": "interval",
+    "bind": "scales"
+  }
   ],
 
   "encoding": 
   {
     "x": {
       "field": "GDP Growth",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {"domain": [-10, 15]}
     },
     "y": {
       "field": "Employment Rate Change",
       "type": "quantitative",
-      "scale": {"zero": false}
+      "scale": {"domain": [-5, 7]}
     },
 
     "color": 
@@ -61,16 +69,22 @@
       "field": "Employment Rate Change", 
       "type": "quantitative", 
       "scale": {"scheme": "redyellowgreen"},
-      "legend": null
+      "legend": 
+      {
+        "title": "Unemployment Rate",
+        "titleOrient": "right",
+        "legendY": 100,
+        "legendX": 420,
+        "orient": "none"
+      }
     },
-
 
     "size": 
     {
       "field": "GDP", 
       "type": "quantitative", 
       "legend": null,
-      "scale": {"rangeMax":3000, "rangeMin": 10}
+      "scale": {"rangeMax":8000, "rangeMin": 500}
       },
 
     "opacity": 
@@ -80,7 +94,11 @@
         "param": "yearSlide", "value": 1
       },
       "value": 0.1
-    }
+    },
+
+    "stroke": {"value": "black"},
+
+    "tooltip": [{"field": "Country"},{"field": "Year"},{"field": "GDP", "title": "GDP (Million euro)"},{"field": "Employment", "title": "Employment Rate"},{"field": "GDP Growth", "format": ".2f"},{"field": "Employment Rate Change", "format": ".2f"}]
 
   }
 
