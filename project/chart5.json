@@ -114,7 +114,8 @@
             
             "field": "totalPop",
             "type": "quantitative",
-            "title": "Population (thousands)"
+            "title": "Population (thousands)",
+            "scale": {"zero": false}
           },
           "color": 
           {
