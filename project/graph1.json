@@ -13,7 +13,6 @@
 
   "resolve": {"scale": {"color": "independent"}},
 
-  "title": "Energy! Energy! Energy!",
 
 
   "hconcat":
@@ -40,11 +39,13 @@
       "title": 
       {
         "text": "Energy: Europe's Worst Polluter",
-        "subtitle": "Green house gas emissions by sector",
-        "subtitleFontSize": 10
+        "subtitle": ["Green house gas emissions by sector (2019). Source: OECD", "(Select a country to highlight)"],
+        "subtitleFontSize": 10,
+        "subtitleFont": "italic",
+        "font": "italic"
       },
 
-      "height": 702,
+      "height": 500,
 
       "view": 
       {
@@ -185,14 +186,16 @@
 
           "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph2_data.json"},
 
-          "height": 300,
-          "width": 400,
+          "height": 200,
+          "width": 300,
 
           "title": 
           {
             "text": "Differing Trends Across Europe",
             "subtitle": "Total 'final energy' consumption (5 year moving average)",
-            "subtitleFontSize": 10
+            "subtitleFontSize": 10,
+                    "subtitleFont": "italic",
+        "font": "italic"
           },
 
           "transform": [{"filter": {"param": "select"}}],
@@ -264,8 +267,10 @@
             {
               "type": "quantitative", 
               "scale": {"zero": false},
-              "title": 
-              ["Million metric tons of oil equivalent"]
+              "axis": {
+                "title": "Million metric tons of oil equivalent",
+                "titleFontWeight": "normal"
+              }
             },
             "color": 
             {
@@ -297,11 +302,13 @@
           {
             "text":"The Growth Of Green",
             "subtitle": ["Energy production by Source", "(Defualt view: each countries 'total production' combined. Russia, Belarus, and Swiss data missing)"],
-            "subtitleFontSize": 10
+            "subtitleFontSize": 10,
+                    "subtitleFont": "italic",
+        "font": "italic"
           },
 
-          "width": 400, 
-          "height": 300,
+          "width": 300, 
+          "height": 200,
           "view": 
           {
             "strokeWidth": 2,
@@ -339,8 +346,8 @@
                 "orient": "none",
                 "direction": "vertical",
                 "labelOffset": 3,
-                "legendX": 410,
-                "legendY": 600
+                "legendX": 310,
+                "legendY": 390
               }
             },
             "tooltip": {"field": "Energy Source", "type": "nominal"}
