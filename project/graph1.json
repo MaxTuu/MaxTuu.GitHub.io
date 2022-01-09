@@ -194,7 +194,7 @@
           "title": 
           {
             "text": "Differing Trends Across Europe",
-            "subtitle": "Total 'final energy' consumption (5 year moving average)",
+            "subtitle": ["Total 'final energy' consumption (5 year moving average)", "Source: EIA"],
         "fontSize": 20,
         "subtitleFontSize": 14,
                     "subtitleFont": "italic",
@@ -304,7 +304,7 @@
           "title": 
           {
             "text":"The Growth Of Green",
-            "subtitle": ["Energy production by Source", "(Defualt view: each countries 'total production' combined. Russia, Belarus, and Swiss data missing)"],
+            "subtitle": ["Energy production by Source. Source: Eurostat", "(Defualt view: each countries 'total production' combined. Russia, Belarus, and Swiss data missing)"],
         "fontSize": 20,
         "subtitleFontSize": 14,
                     "subtitleFont": "italic",
