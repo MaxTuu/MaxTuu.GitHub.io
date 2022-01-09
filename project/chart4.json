@@ -4,8 +4,11 @@
   "title": 
   {
     "text": "Scandinavia: How The Cold Is Getting Warmer",
-    "subtitle": "Comparing average winter temperature (Dec - Feb), and average temperature anomalies in January 2020",
-    "subtitleFontSize": 10
+    "subtitle": "Comparing average winter temperature (Dec - Feb), and relative temperature anomalies in January 2020",
+            "fontSize": 20,
+        "subtitleFontSize": 14,
+                "subtitleFont": "italic",
+        "font": "italic"
   },
 
   "background": "#FeFeF8",  
@@ -94,7 +97,7 @@
           {
             "labelOpacity": 1,
             "gradientOpacity": 1,
-            "title": "Avg. Anomaly Temp (Celcius)",
+            "title": "Relative Anomaly Temp",
             "titleOrient": "right",
             "orient": "none",
             "legendY": 280,
