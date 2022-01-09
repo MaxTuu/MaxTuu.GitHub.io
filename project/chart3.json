@@ -13,7 +13,9 @@
     "anchor": "middle",
     "subtitle": ["Correlation between GDP growth and change in Employment rate. Source: Eurostat","(Left click and scroll to explore the scatter plot)"],
             "fontSize": 20,
-        "subtitleFontSize": 14
+        "subtitleFontSize": 14,
+                "subtitleFont": "italic",
+        "font": "italic"
   },
 
   "background": "#FeFeF8",
