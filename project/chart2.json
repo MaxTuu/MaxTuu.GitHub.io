@@ -7,10 +7,16 @@
   {
     "text": "A Bumpy Road: GDP and Transport Activity",
     "anchor": "middle",
-    "subtitle": "(Flag = GDP growth, Road = Change in Passenger and Freight transport kilometers)"
+    "subtitle": ["Flag = GDP growth, Road = Change in Passenger and Freight transport kilometers", "Source: OECD"],
+        "fontSize": 20,
+        "subtitleFontSize": 14,
+        "subtitleFont": "italic",
+        "font": "italic"
   },
 
   "background": "#FeFeF8",
+
+  
 
     "vconcat": 
     [
@@ -26,7 +32,7 @@
 
             "encoding": 
             {
-              "y": {"title": "Growth Rate"},
+              "y": {"axis": {"title": "Growth Rate", "titleFontWeight": "normal"}},
               "x": {"axis": null}
             },
 
@@ -381,7 +387,7 @@
 
             "encoding": 
             {
-              "y": {"title": "Growth Rate"},
+              "y": {"axis": {"title": "Growth Rate", "titleFontWeight": "normal"}},
               "x": {"title": null}
             },
 
