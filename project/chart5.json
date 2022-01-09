@@ -11,7 +11,10 @@
       "Historic and predicted population trends.",
       "Select a country from the legend to isolate its trend"
     ],
-    "subtitleFontSize": 10
+            "fontSize": 20,
+        "subtitleFontSize": 14,
+                "subtitleFont": "italic",
+        "font": "italic"
   },
 
   "background": "#FeFeF8",    
@@ -42,7 +45,7 @@
       "mark": "bar",
 
       "height": 100,
-      "width": 300,
+      "width": 400,
 
   
       "encoding": {
@@ -65,7 +68,8 @@
               {"test": "datum.value === 0", 
               "value": "black"},
               "value": "#ddd"
-            }
+            },
+            "titleFontWeight": "normal"
           }
         },
 
@@ -92,7 +96,7 @@
       {
         "mark": "line",
         "height": 300,
-        "width": 300,
+        "width": 400,
 
         "transform": 
         [
@@ -120,7 +124,8 @@
             "field": "totalPop",
             "type": "quantitative",
             "title": "Population (thousands)",
-            "scale": {"zero": false}
+            "scale": {"zero": false},
+            "axis": {"titleFontWeight": "normal"}
           },
           "color": 
           {
@@ -137,7 +142,7 @@
               "orient": "bottom",
               "legendX": 100,
               "legendY": 0,
-              "columns": 3
+              "columns": 5
             }
           },
           "tooltip": {"field": "Country"}
