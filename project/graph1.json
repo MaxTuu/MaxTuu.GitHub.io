@@ -40,12 +40,14 @@
       {
         "text": "Energy: Europe's Worst Polluter",
         "subtitle": ["Green house gas emissions by sector (2019). Source: OECD", "(Select a country to highlight)"],
-        "subtitleFontSize": 10,
+        "fontSize": 20,
+        "subtitleFontSize": 14,
         "subtitleFont": "italic",
         "font": "italic"
       },
 
-      "height": 500,
+      "height": 600,
+      "width": 200,
 
       "view": 
       {
@@ -186,14 +188,15 @@
 
           "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/project/graph2_data.json"},
 
-          "height": 200,
-          "width": 300,
+          "height": 300,
+          "width": 400,
 
           "title": 
           {
             "text": "Differing Trends Across Europe",
             "subtitle": "Total 'final energy' consumption (5 year moving average)",
-            "subtitleFontSize": 10,
+        "fontSize": 20,
+        "subtitleFontSize": 14,
                     "subtitleFont": "italic",
         "font": "italic"
           },
@@ -302,12 +305,13 @@
           {
             "text":"The Growth Of Green",
             "subtitle": ["Energy production by Source", "(Defualt view: each countries 'total production' combined. Russia, Belarus, and Swiss data missing)"],
-            "subtitleFontSize": 10,
+        "fontSize": 20,
+        "subtitleFontSize": 14,
                     "subtitleFont": "italic",
         "font": "italic"
           },
 
-          "width": 300, 
+          "width": 400, 
           "height": 200,
           "view": 
           {
@@ -346,8 +350,8 @@
                 "orient": "none",
                 "direction": "vertical",
                 "labelOffset": 3,
-                "legendX": 310,
-                "legendY": 390
+                "legendX": 410,
+                "legendY":490
               }
             },
             "tooltip": {"field": "Energy Source", "type": "nominal"}
