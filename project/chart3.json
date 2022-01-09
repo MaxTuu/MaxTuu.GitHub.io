@@ -11,7 +11,9 @@
   {
     "text": "Okun's Rule of Thumb",
     "anchor": "middle",
-    "subtitle": ["Correlation between GDP growth and change in Employment rate","(Left click and scroll to explore the scatter plot)"]
+    "subtitle": ["Correlation between GDP growth and change in Employment rate. Source: Eurostat","(Left click and scroll to explore the scatter plot)"],
+            "fontSize": 20,
+        "subtitleFontSize": 14
   },
 
   "background": "#FeFeF8",
