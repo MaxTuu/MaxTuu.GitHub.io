@@ -4,7 +4,7 @@
   "title": 
   {
     "text": "Scandinavia: How The Cold Is Getting Warmer",
-    "subtitle": "Comparing average winter temperature (Dec - Feb), and relative temperature anomalies in January 2020",
+    "subtitle": ["Comparing average winter temperature (Dec - Feb), and relative temperature anomalies in January 2020","Source: Wikipedia, Copernicus"],
             "fontSize": 20,
         "subtitleFontSize": 14,
                 "subtitleFont": "italic",
