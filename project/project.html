@@ -71,7 +71,7 @@
     <p class="ex1"> 
         Specifically, this project aims to answer the following:  <br>
         -	What do the past 20 years of energy consumption look like in Europe, and which countries are curbing their consumption habits the most.<br>
-        -	What are the sources and impact of energy production <br>
+        -	What are the sources and impact of energy production. <br>
         -	By observing the primary influences in energy consumption, can we predict the future trends of European energy consumption.<br>
     </p>
         
@@ -132,12 +132,12 @@
     
         <p class="ex1">From this, we see how energy consumption is the biggest influence behind greenhouse gas emissions in Europe, 
             with the larger economies polluting the most. However, growth in energy from renewable sources suggests that over time, 
-            we should expect the size of energy role in GHG emissions to fall.</p>
+            we should expect the size of energy's role in GHG emissions to fall.</p>
         
 
         <h3>Influences of energy consumption</h3>
         
-        <p class="ex1">The following charts examine trends in primary factors of energy demand. 
+        <p class="ex1">The following section examines trends in primary factors of energy demand. 
             <a href="https://www.sciencedirect.com/science/article/abs/pii/S0301421519306950">In the Journal of Energy Policy,</a> 
             S. Thomas and J. Rosenow argue that the biggest drivers behind recent changes in 
             European energy consumption are activity levels and geographic factors.</p>
@@ -164,6 +164,8 @@
         
         <p></p>
          <p></p>
+        <p></p>
+        <p></p>
         
         <!--Chart 2 -->
         <div class="chart" id="chart2">
@@ -189,7 +191,7 @@
          <p></p>
          <p></p>
         
-        <p class="ex1">The following two charts explore how average winter temperatures and population levels are likely to change in the future, both of which are indicators of energy demand in the residential sector</p>
+        <p class="ex1">The following two charts explore how average winter temperatures and population levels are likely to change in the future, both of which are indicators of energy demand in the residential sector.</p>
 
                 <!--Chart 4 -->
         <div class="chart" id="chart4">
@@ -251,17 +253,17 @@
     
     <h2> Data: Access, Automation, Cleaning, and Analysis </h2>
     
-        <p class="ex1">The data for this project was sourced from multiple agencies and websites, using GitHub and API URLS to access the raw data via python. In particular, the following sources were used:</p>
+        <p class="ex1">The data for this project was sourced from multiple agencies and websites, using GitHub and API URLs to access the raw data via python. In particular, the following sources were used:</p>
         <p class="ex1">
         -	API URLs from the Environmental investigation agency and Eurostat were used to obtain energy and economy data.<br>
         -	OECD, Worldbank, and United Nation datasets were uploaded to GitHub.<br>
-        -	Scraped Wikipedia webpages and image-samples from Copernicus were used as sources for temperature data.<br>
+        -	Scraped Wikipedia webpages and image-samples from Copernicus were used as sources for temperature data.<br><br>
             Using the provided Google Colab code, each charts data and analysis can be replicated, as all sources of data are publicly available via URLs.
         </p>
         <p class="ex1">
             Each chart presented its own difficulties when sourcing data. 
             In particular, APIs that wouldn’t allow for multiple countries to be requested at the same time (EIA API),
-            and who’s format was complex and difficult to work with (OECD API) were large barriers to cleaning the data. 
+            and who’s format was complex and difficult to work with (OECD API) were tricky to work with. 
             This was solved by looping API requests, and directly downloading data sets when APIs weren’t appropriate (such as historic yearly data). <br>
             The trickiest data to source was historic weather, with most APIs and datasets hidden behind paywalls. 
             To resolve this, I scraped average monthly temperature figures from Wikipedia, 
