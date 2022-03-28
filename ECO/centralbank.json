@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Stock prices of 5 Tech Companies over Time.",
+  "description": "central bank assets: https://www.bankofengland.co.uk/boeapps/database/fromshowcolumns.asp?Travel=NIxSTxTBxSUx&FromSeries=1&ToSeries=50&DAT=RNG&FD=1&FM=Jan&FY=2000&TD=31&TM=Dec&TY=2022&FNY=&CSVF=TT&html.x=198&html.y=36&C=IS9&C=TY8&Filter=N   https://fred.stlouisfed.org/series/WALCL   https://fred.stlouisfed.org/series/JPNASSETS#0    https://fred.stlouisfed.org/series/ECBASSETSW ",
   "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/centralbank3.csv"},
   "mark": "line",
   "encoding": {
