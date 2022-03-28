@@ -1,1 +1,83 @@
+<!DOCTYPE html>
 
+<!-- ///////////////////  HEAD //////////////////////////////////// -->
+
+<head>
+
+    <link rel="stylesheet" href="index.css">
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <!--The next three lines allow the Vega embed-->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+
+    <!--fonts-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+    </style>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+    </style>
+
+
+</head>
+
+<title>
+   Max Moore - Portfolio
+</title>
+
+<!-- ///////////////////  HEAD //////////////////////////////////// -->
+
+
+
+<!-- ///////////////////  START BODY //////////////////////////////////// -->
+
+<body>
+    
+<div class="head">
+    <div class="headerobjectswrapper">
+
+        <header>The Portfolio</header>
+    </div>
+
+    <div class="subhead">
+        Max Moore - Student Number: 1914324 - 10/01/2022
+    </div>
+</div>
+    
+    <!-- ///////////////////////////////////////////Week one/////////////////////////////////////////////-->
+    
+             <div class="pagelink">
+            <span style="font-style: italic;">
+             <a href="https://maxmoore.info/project/project">Follow For My Project</a>    
+            </span>
+        </div>
+
+    <h3>Embedding</h3>
+    <p>Task: Embed three charts, two of which are given, and the other to be taken from the rapidcharts repository. <br>
+    Charts one and two were provided for me, and I picked chart three myself.</p>
+
+    <!--Chart 1 -->
+    <div class="chart" id="chart1">
+        <script>
+            var myChart1 = "week1_chart1.json";
+            vegaEmbed('#chart1', myChart1);
+        </script>
+    </div>
+
+    <!--Chart 2 -->
+    <div class="chart" id="chart2">
+        <script>
+            var myChart2 = "week1_chart2.json";
+            vegaEmbed('#chart2', myChart2);
+        </script>
+    </div>
+
+    <!--Chart 3 -->
+    <div class="chart" id="chart3">
+        <script>
+            var myChart3 = "week1_chart3.json";
+            vegaEmbed('#chart3', myChart3);
+        </script>
+    </div>
