@@ -1,0 +1,11 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Average age of marriage",
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/marriageAge.csv"},
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "year", "type": "temporal"},
+    "y": {"field": "value", "type": "quantitative"},
+    "color": {"field": "series", "type": "nominal"}
+  }
+}
