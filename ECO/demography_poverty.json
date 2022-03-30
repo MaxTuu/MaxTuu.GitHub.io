@@ -1,0 +1,15 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/demography_poverty.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "region",
+    "sort": {"field": "Percent"}
+    },
+    "y": {"field": "Percent", "type": "quantitative"},
+    "xOffset": {"field": "type"},
+    "color": {"field": "type"}
+  }
+}
