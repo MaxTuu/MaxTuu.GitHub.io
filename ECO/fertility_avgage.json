@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "avg age of mother at birth",
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/fertility_avgage.csv"},
+  "encoding": {
+    "x": {"field": "year", "type": "temporal"}
+  },
+  "layer": [
+        
+    {
+      "mark": "line",
+      "encoding": 
+      {
+        "y": {"field": "First child", "type": "quantitative"},
+        "color": {"value": "red"}
+      }
+    },
+
+    {
+      "mark": "line",
+      "encoding": 
+      {
+        "y": {"field": "Second child", "type": "quantitative"},
+        "color": {"value": "orange"}
+      }
+    },
+
+    {
+      "mark": "line",
+      "encoding": 
+      {
+        "y": {"field": "Third child", "type": "quantitative"},
+        "color": {"value": "yellow"}
+      }
+    },
+
+    {
+      "mark": "line",
+      "encoding": 
+      {
+        "y": {"field": "Fourth child", "type": "quantitative"},
+        "color": {"value": "black"}
+      }
+    }
+
+
+  ]
+}
