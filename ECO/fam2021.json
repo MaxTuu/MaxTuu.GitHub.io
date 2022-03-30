@@ -1,0 +1,14 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "family make up 2021",
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/fam2021.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "family", "type": "nominal"},
+    "y": {"field": "number", "type": "quantitative"},
+    "xOffset": {"field": "child"},
+    "color": {"field": "child"}
+  }
+}
