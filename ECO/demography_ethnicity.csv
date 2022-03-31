@@ -1,0 +1,51 @@
+region,Ethnicity,percent
+North East,Asian,2.63
+North West,Asian,7
+Yorkshire and The Humber,Asian,7.13
+East Midlands,Asian,6.97
+West Midlands,Asian,11.76
+East,Asian,5.26
+London,Asian,18.76
+South East,Asian,5.66
+South West,Asian,2.22
+Wales,Asian,2.44
+North East,"Black, African, Caribbean",0.96
+North West,"Black, African, Caribbean",1.98
+Yorkshire and The Humber,"Black, African, Caribbean",1.53
+East Midlands,"Black, African, Caribbean",2.44
+West Midlands,"Black, African, Caribbean",4.31
+East,"Black, African, Caribbean",2.28
+London,"Black, African, Caribbean",12.09
+South East,"Black, African, Caribbean",1.8
+South West,"Black, African, Caribbean",0.94
+Wales,"Black, African, Caribbean",0.96
+North East,Mixed,0.79
+North West,Mixed,1.23
+Yorkshire and The Humber,Mixed,1.44
+East Midlands,Mixed,1.39
+West Midlands,Mixed,1.71
+East,Mixed,2.01
+London,Mixed,3.87
+South East,Mixed,1.69
+South West,Mixed,1.23
+Wales,Mixed,0.85
+North East,White,94.77
+North West,White,88.61
+Yorkshire and The Humber,White,88.45
+East Midlands,White,88.29
+West Midlands,White,80.61
+East,White,89.42
+London,White,59.24
+South East,White,89.7
+South West,White,94.7
+Wales,White,94.81
+North East,Other,0.86
+North West,Other,1.19
+Yorkshire and The Humber,Other,1.47
+East Midlands,Other,0.91
+West Midlands,Other,1.58
+East,Other,1.04
+London,Other,6.02
+South East,Other,1.13
+South West,Other,0.92
+Wales,Other,0.92
