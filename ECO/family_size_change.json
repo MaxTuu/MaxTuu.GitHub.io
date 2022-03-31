@@ -1,0 +1,11 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Google's stock price over time.",
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/family_size.csv"},
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "year", "type": "temporal"},
+    "y": {"field": "index", "type": "quantitative"},
+    "color": {"field": "household"}
+  }
+}
