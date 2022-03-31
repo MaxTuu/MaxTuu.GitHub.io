@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 300,
+  "height": 200,
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/family_type.csv"
+  },
+  "mark": "area",
+  "encoding": {
+    "x": {"timeUnit": "yearmonth", "field": "year", "axis": {"format": "%Y"}},
+    "y": {"aggregate": "sum", "field": "Number of Families"},
+    "color": {
+      "field": "type",
+      "sort": {"field": "order"}
+    }
+  }
+}
