@@ -1,0 +1,12 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/migrationwithintheuk/datasets/localareamigrationindicatorsunitedkingdom",
+  "title": "Relative Population Change By Migration: International and Inter-Regional",
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/demography_flow.csv"},
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "year", "type": "temporal"},
+    "y": {"field": "Cumulative Growth", "type": "quantitative"},
+    "color": {"field": "region"}
+  }
+}
