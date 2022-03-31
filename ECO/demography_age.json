@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/datasets/populationestimatesbyethnicgroupenglandandwales",
+  "data": { "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/demography_age.csv"},
+  "width": {"step": 17},
+  "mark": "bar",
+  "encoding": {
+    "row": {"field": "ethnicity"},
+    "y": {
+      "aggregate": "sum", "field": "pop",
+      "title": "population"
+    },
+    "x": {"field": "age"},
+    "color": {
+      "field": "ethnicity"
+    }
+  }
+}
