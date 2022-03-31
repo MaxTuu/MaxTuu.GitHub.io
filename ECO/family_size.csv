@@ -1,0 +1,131 @@
+year,household,Number of Families,change,5 Year MA 
+1996,Two People,8094,,
+1997,Two People,8259,2.0,
+1998,Two People,8369,1.3,
+1999,Two People,8403,0.4,
+2000,Two People,8570,2.0,
+2001,Two People,8587,0.2,1.2
+2002,Two People,8690,1.2,1.0
+2003,Two People,8772,0.9,0.9
+2004,Two People,8768,0.0,0.9
+2005,Two People,8925,1.8,0.8
+2006,Two People,8968,0.5,0.9
+2007,Two People,8959,-0.1,0.6
+2008,Two People,9093,1.5,0.7
+2009,Two People,9140,0.5,0.8
+2010,Two People,9213,0.8,0.6
+2011,Two People,9246,0.4,0.6
+2012,Two People,9282,0.4,0.7
+2013,Two People,9151,-1.4,0.1
+2014,Two People,9348,2.2,0.5
+2015,Two People,9450,1.1,0.5
+2016,Two People,9441,-0.1,0.4
+2017,Two People,9416,-0.3,0.3
+2018,Two People,9506,1.0,0.8
+2019,Two People,9609,1.1,0.6
+2020,Two People,9474,-1.4,0.1
+2021,Two People,9579,1.1,0.3
+1996,Three People,3918,,
+1997,Three People,3847,-1.8,
+1998,Three People,3894,1.2,
+1999,Three People,3913,0.5,
+2000,Three People,3798,-2.9,
+2001,Three People,3835,1.0,-0.4
+2002,Three People,3840,0.1,0.0
+2003,Three People,3816,-0.6,-0.4
+2004,Three People,3941,3.3,0.2
+2005,Three People,4017,1.9,1.1
+2006,Three People,4015,0.0,0.9
+2007,Three People,4065,1.2,1.2
+2008,Three People,4124,1.5,1.6
+2009,Three People,4210,2.1,1.3
+2010,Three People,4229,0.5,1.0
+2011,Three People,4255,0.6,1.2
+2012,Three People,4366,2.6,1.4
+2013,Three People,4365,0.0,1.1
+2014,Three People,4311,-1.2,0.5
+2015,Three People,4338,0.6,0.5
+2016,Three People,4374,0.8,0.6
+2017,Three People,4469,2.2,0.5
+2018,Three People,4370,-2.2,0.0
+2019,Three People,4287,-1.9,-0.1
+2020,Three People,4306,0.4,-0.1
+2021,Three People,4435,3.0,0.3
+1996,Four People,3469,,
+1997,Four People,3458,-0.3,
+1998,Four People,3436,-0.6,
+1999,Four People,3416,-0.6,
+2000,Four People,3418,0.1,
+2001,Four People,3470,1.5,0.0
+2002,Four People,3432,-1.1,-0.1
+2003,Four People,3448,0.5,0.1
+2004,Four People,3456,0.2,0.2
+2005,Four People,3436,-0.6,0.1
+2006,Four People,3436,0.0,-0.2
+2007,Four People,3480,1.3,0.3
+2008,Four People,3450,-0.9,0.0
+2009,Four People,3524,2.1,0.4
+2010,Four People,3558,1.0,0.7
+2011,Four People,3530,-0.8,0.5
+2012,Four People,3555,0.7,0.4
+2013,Four People,3640,2.4,1.1
+2014,Four People,3716,2.1,1.1
+2015,Four People,3801,2.3,1.3
+2016,Four People,3840,1.0,1.7
+2017,Four People,3766,-1.9,1.2
+2018,Four People,3860,2.5,1.2
+2019,Four People,3881,0.5,0.9
+2020,Four People,4101,5.7,1.6
+2021,Four People,3993,-2.6,0.8
+1996,Five People,1186,,
+1997,Five People,1191,0.4,
+1998,Five People,1164,-2.3,
+1999,Five People,1169,0.4,
+2000,Five People,1201,2.7,
+2001,Five People,1156,-3.7,-0.5
+2002,Five People,1144,-1.0,-0.8
+2003,Five People,1157,1.1,-0.1
+2004,Five People,1162,0.4,-0.1
+2005,Five People,1148,-1.2,-0.9
+2006,Five People,1176,2.4,0.4
+2007,Five People,1189,1.1,0.8
+2008,Five People,1179,-0.8,0.4
+2009,Five People,1157,-1.9,-0.1
+2010,Five People,1153,-0.3,0.1
+2011,Five People,1169,1.4,-0.1
+2012,Five People,1165,-0.3,-0.4
+2013,Five People,1213,4.1,0.6
+2014,Five People,1211,-0.2,0.9
+2015,Five People,1180,-2.6,0.5
+2016,Five People,1271,7.7,1.8
+2017,Five People,1283,0.9,2.0
+2018,Five People,1293,0.8,1.3
+2019,Five People,1254,-3.0,0.8
+2020,Five People,1244,-0.8,1.1
+2021,Five People,1238,-0.5,-0.5
+1996,Six or More People,463,,
+1997,Six or More People,469,1.3,
+1998,Six or More People,463,-1.3,
+1999,Six or More People,469,1.3,
+2000,Six or More People,456,-2.8,
+2001,Six or More People,458,0.4,-0.2
+2002,Six or More People,465,1.5,-0.2
+2003,Six or More People,469,0.9,0.3
+2004,Six or More People,452,-3.6,-0.7
+2005,Six or More People,461,2.0,0.2
+2006,Six or More People,481,4.3,1.0
+2007,Six or More People,475,-1.2,0.5
+2008,Six or More People,494,4.0,1.1
+2009,Six or More People,476,-3.6,1.1
+2010,Six or More People,496,4.2,1.5
+2011,Six or More People,548,10.5,2.8
+2012,Six or More People,524,-4.4,2.1
+2013,Six or More People,533,1.7,1.7
+2014,Six or More People,550,3.2,3.0
+2015,Six or More People,535,-2.7,1.7
+2016,Six or More People,523,-2.2,-0.9
+2017,Six or More People,577,10.3,2.1
+2018,Six or More People,540,-6.4,0.4
+2019,Six or More People,597,10.6,1.9
+2020,Six or More People,549,-8.0,0.8
+2021,Six or More People,537,-2.2,0.8
