@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "families in thousands, : https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/datasets/familiesandhouseholdsfamiliesandhouseholds",
+
+  "data": { "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/demography_ethnicity.csv"},
+  "mark": "bar",
+  "width": {"step": 17},
+  "encoding": {
+    "y": {
+      "aggregate": "sum", "field": "percent",
+      "title": "Percent",
+      "sort": "ascending"
+    },
+    "x": {"field": "region", "sort": {"field": "Ethnicity"}},
+    "color": {
+      "field": "Ethnicity",
+      "sort": "ascending"
+    }
+  }
+}
