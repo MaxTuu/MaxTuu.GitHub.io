@@ -46,7 +46,8 @@
         "param": "hover",
         "field": "Child",
         "type": "nominal",
-        "scale": {"scheme": "yellowgreenblue"}
+        "scale": {"scheme": "yellowgreenblue"},
+        "legend": {"title": "Child Number", "values": ["First Child", "Second Child", "Third Child", "Fourth Child"]}
       },
       "value": "grey",
       "legend": {
