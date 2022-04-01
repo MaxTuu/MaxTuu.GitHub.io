@@ -1,0 +1,100 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/lifeexpectancies",
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_death2.csv"
+  },
+
+  "height": 300,
+  "width": 300,
+
+  "title": {
+    "text": "Life Expectancy At Birth",
+    "subtitle": "Life expectancy in England. Source: ONS",
+    "subtitleFontSize": 10,
+    "color": "black",
+    "fontSize": 15,
+    "anchor": "start"
+  },
+
+  "transform": [{"filter": "datum.Year>minYear"},
+    {"filter": "datum.Year<maxYear"}],
+
+  "params": [
+    {
+      "name": "minYear",
+      "value": 1955,
+      "bind": {
+        "input": "range",
+        "min": 1960,
+        "max": 2018,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1963,
+        "max": 2020,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+
+
+
+    "layer": 
+  [
+    {
+      "description": "transparent layer to make it easier to trigger selection",
+
+      "mark": {"type": "line", "strokeWidth": 20, "stroke": "transparent"},
+
+      "params": 
+      [
+        {
+          "name": "hover",
+          "select": 
+          {
+            "type": "point", 
+            "fields": ["Child"], 
+            "on": "mouseover"
+          }
+        }
+      ]
+    },
+
+    {
+      "mark": "line"
+    }
+  ],
+
+  "encoding": {
+    "x": {"field": "year", "type": "temporal", "title": null},
+
+    "y": 
+    {
+      "field": "Value", 
+      "type": "quantitative",
+      "scale": {"domain": ["66","84"]},
+      "title": "Years"
+    },
+
+    "color": 
+    {
+      "field": "Variable",
+      "scale": {"scheme": "yellowgreenblue"},
+      "legend": {"title": "Series"}
+    },
+
+    "tooltip": [
+      {"field": "Variable", "title": "Series"},
+      {"field": "Year", "title": "Year"},
+      {"field": "Value", "title": "Life Expectancy "}
+    ]
+  }
+}
