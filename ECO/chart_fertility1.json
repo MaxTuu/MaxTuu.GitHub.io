@@ -15,7 +15,8 @@
     "subtitle": "Average number of children born to a woman over her lifetime. Source: OECD",
     "subtitleFontSize": 10,
     "color": "black",
-    "fontSize": 15
+    "fontSize": 15,
+    "anchor": "start"
   },
   
   "encoding": {
