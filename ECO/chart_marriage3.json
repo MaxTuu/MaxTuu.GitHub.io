@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/marriagecohabitationandcivilpartnerships/datasets/marriagesinenglandandwales2013",
+
+  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/wedding_dates.csv"},
+
+  "height": 150,
+  "width": 350,
+
+  "title": {
+    "text": "Popular Days For Marriage",
+    "subtitle": "Number of marriages per date (2008-2018). Source: ONS",
+    "subtitleFontSize": 10,
+    "color": "black",
+    "fontSize": 15,
+    "anchor": "start"
+  },
+
+  "mark": "rect",
+  "encoding": {
+    "x": 
+    {
+      "field": "day", 
+      "type": "nominal",
+      "title": null,
+      "axis": {"labelAngle": 270},
+      "scale": 
+      {
+        "domain": ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"]
+      }
+    },
+
+    "y": 
+    {
+      "field": "month", 
+      "type": "ordinal",
+      "title": null,
+      "scale": 
+      {
+      "domain": ["January","February","March","April","May","June","July","August","September","October","November","December"]
+      }
+    },
+    "color": 
+    {
+      "aggregate": "mean", 
+      "field": "value",
+      "legend": null
+    },
+
+    "tooltip": [
+      {"field": "month", "title": "Month"},
+      {"field": "day", "title": "Date"},
+      {"field": "mean_value", "title": "10 Year Sum"}
+    ]
+  },
+  "config": {
+    "axis": {"grid": true, "tickBand": "extent"}
+  }
+}
