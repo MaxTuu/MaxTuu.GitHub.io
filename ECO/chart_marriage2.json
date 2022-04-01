@@ -1,0 +1,92 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_marriage2.csv"
+  },
+
+  "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/marriagecohabitationandcivilpartnerships/datasets/marriagesinenglandandwales2013",
+
+  "height": 300,
+  "width": 300,
+
+  "title": {
+    "text": "Age Of Newly-Weds",
+    "subtitle": "Average age by prior marriage history. Source: ONS",
+    "subtitleFontSize": 10,
+    "color": "black",
+    "fontSize": 15,
+    "anchor": "start"
+  },
+  
+  "encoding": {
+    "x": 
+    {
+      "field": "year",
+      "type": "temporal",
+      "title": ""
+    },
+
+    "y": 
+    {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {
+      "title": "Age",
+      "titleFontSize": 12,
+      "titleFontWeight": 500
+      }
+      
+    },
+
+    "color": 
+    {
+      "condition": {
+        "param": "hover",
+        "field": "series",
+        "type": "nominal",
+        "scale": {"scheme": "yellowgreenblue"},
+        "legend": {"title": "Type of newly-wed"}
+      },
+      "value": "grey"
+    },
+
+    "opacity": 
+    {
+      "condition": {"param": "hover", "value": 1}, 
+      "value": 0.2
+    },
+
+    "tooltip": 
+    [
+      {"field": "series", "title": "Type"},
+      {"field": "Year", "title": "Year"},
+      {"field": "value", "title": "Average Age"}
+    ]
+  },
+
+
+  "layer": 
+  [
+    {
+      "description": "transparent layer to make it easier to trigger selection",
+
+      "mark": {"type": "line", "strokeWidth": 10, "stroke": "transparent"},
+
+      "params": 
+      [
+        {
+          "name": "hover",
+          "select": 
+          {
+            "type": "point", 
+            "fields": ["series"], 
+            "on": "mouseover"
+          }
+        }
+      ]
+    },
+
+    {"mark": "line"}
+  ]
+}
