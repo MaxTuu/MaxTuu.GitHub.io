@@ -23,8 +23,8 @@
       "field": "Value",
       "type": "quantitative",
       "axis": {
-        "title": "Number of children",
-        "titleFontSize": 10,
+        "title": "Deaths",
+        "titleFontSize": 12,
         "titleFontWeight": 500
       }
     },
