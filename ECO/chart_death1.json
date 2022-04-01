@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths",
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_death1.csv"
+  },
+  "width": 300,
+  "height": 200,
+
+  "title": {
+    "text": "Deaths By Age",
+    "subtitle": "Total deaths in England and Wales. Source: ONS",
+    "subtitleFontSize": 10,
+    "color": "black",
+    "fontSize": 15,
+    "anchor": "start"
+  },
+
+    "params": [
+    {
+      "name": "ageparam",
+      "select": {"type": "point", "fields": ["Age"]},
+      "bind": "legend"
+    }
+  ],
+
+  "transform": [{"filter": {"param": "ageparam"}}],
+
+  "mark": "area",
+  "encoding": {
+    "x": 
+    {
+      "timeUnit": "yearmonth", 
+      "field": "year", 
+      "axis": {"format": "%Y"},
+      "title": null
+    },
+
+    "y": 
+    {
+      "aggregate": "sum", 
+      "field": "Deaths",
+      "title": null
+    },
+    
+    "color": {
+      "field": "Age",
+      "scale": {"scheme": "yellowgreenblue"},
+      "sort": {"field": "order"},
+      "legend": {"title": "Select an age group"}
+    },
+
+    "tooltip": [
+      {"field": "Year", "title": "Year"},
+      {"field": "Age", "title": "Age"},
+      {"field": "Deaths", "title": "Number of deaths"}
+    ]
+  }
+}
