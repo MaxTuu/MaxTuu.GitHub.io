@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/conceptionandfertilityrates",
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_fertility3.csv"
+  },
+
+  "height": 300,
+  "width": 300,
+
+  "title": {
+    "text": "Parent Ages",
+    "subtitle": "Number of children, given the registered parent ages (2020). Source: ONS",
+    "subtitleFontSize": 10,
+    "color": "black",
+    "fontSize": 15,
+    "anchor": "start"
+  },
+
+
+  "mark": {"type":"rect"},
+
+  "encoding": {
+
+    "y": {
+      "field": "father age",
+      "type": "nominal",
+      "sort": {"field": "frank", "order": "descending"},
+      "axis": {
+      "title": "Father's age",
+      "titleFontSize": 12,
+      "titleFontWeight": 500
+      }
+    },
+
+    "x": {
+      "field": "mother age",
+      "type": "nominal",
+      "sort": {"field": "mrank"},
+      "axis": {
+      "title": "Mother's age",
+      "titleFontSize": 12,
+      "titleFontWeight": 500
+      }
+    },
+
+    "color": {
+      "field": "sqr", 
+      "type": "quantitative",
+      "scale": {"scheme": "yellowgreenblue"},
+      "legend": null
+      },
+
+    "opacity": {
+          "field": "logbirth",
+          "scale": {"rangeMin": 0, "rangeMax": 1},
+          "legend": null
+        },
+
+    "tooltip": 
+    [
+      {"field": "births", "title": "Number of births"},
+      {"field": "mother age", "title": "Mother's age"},
+      {"field": "father age", "title": "Father's age"}
+    ]
+    
+  },
+  "config": {"axis": {"grid": true, "tickBand": "extent"}}
+}
