@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_death3.csv"
+  },
+  "description": "Produced by Max Moore. Source: https://data.oecd.org/healthstat/infant-mortality-rates.htm",
+  "height": 300,
+  "width": 300,
+  "title": {
+    "text": "Infant Mortality",
+    "subtitle": "Deaths under 1 year of age, per 1000 live births. Source: OECD",
+    "subtitleFontSize": 10,
+    "color": "black",
+    "fontSize": 15,
+    "anchor": "start"
+  },
+
+  "transform": [{"filter": {"param": "countryp"}}],
+
+  "encoding": {
+    "x": {"field": "TIME", "type": "temporal", "title": ""},
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "axis": {
+        "title": "Number of children",
+        "titleFontSize": 10,
+        "titleFontWeight": 500
+      }
+    },
+    "color": {
+      "condition": {
+        "param": "hover",
+        "field": "Country",
+        "type": "nominal",
+        "scale": {"scheme": "yellowgreenblue"},
+        "legend": {"title": "Select a country"}
+      },
+      "value": "grey"
+    },
+    "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2},
+    "tooltip": [
+      {"field": "Country"},
+      {"field": "Year", "title": "Year"},
+      {"field": "Value", "title": "Fertility Rate"}
+    ]
+  },
+  "layer": [
+    {
+      "description": "transparent layer to make it easier to trigger selection",
+      "mark": {"type": "line", "strokeWidth": 10, "stroke": "transparent"},
+      "params": [
+        {
+          "name": "hover",
+          "select": {"type": "point", "fields": ["Country"], "on": "mouseover"}
+        },
+        {
+          "name": "countryp",
+          "select": {"type": "point", "fields": ["Country"]},
+          "bind": "legend"
+        }
+      ]
+    },
+    {"mark": "line"}
+  ]
+}
