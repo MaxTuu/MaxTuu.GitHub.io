@@ -1,0 +1,99 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_fertility2.csv"
+  },
+
+  "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/conceptionandfertilityrates",
+
+  "height": 300,
+  "width": 300,
+
+  "title": {
+    "text": "Average Age Of Mother At Birth",
+    "subtitle": "Age at first, second, third, and fourth child. Source: OECD",
+    "subtitleFontSize": 10,
+    "color": "black",
+    "fontSize": 15,
+    "anchor": "start"
+  },
+
+  
+  "encoding": {
+    "x": 
+    {
+      "field": "year",
+      "type": "temporal",
+      "title": ""
+    },
+
+    "y": 
+    {
+      "field": "age",
+      "type": "quantitative",
+      "axis": {
+      "title": "Age of mother",
+      "titleFontSize": 10,
+      "titleFontWeight": 500
+      },
+      "scale": {"domain": [18,34]}
+    },
+
+    "color": 
+    {
+      "condition": {
+        "param": "hover",
+        "field": "Child",
+        "type": "nominal",
+        "scale": {"scheme": "yellowgreenblue"}
+      },
+      "value": "grey",
+      "legend": {
+        "title": "Child Order"
+      }
+    },
+
+    "opacity": 
+    {
+      "condition": {"param": "hover", "value": 1}, 
+      "value": 0.2
+    },
+
+    "tooltip": 
+    [
+      {"field": "Child"},
+      {"field": "Year", "title": "Year"},
+      {"field": "age", "title": "Age of mother"}
+    ]
+
+    
+  },
+
+
+  "layer": 
+  [
+    {
+      "description": "transparent layer to make it easier to trigger selection",
+
+      "mark": {"type": "line", "strokeWidth": 20, "stroke": "transparent"},
+
+      "params": 
+      [
+        {
+          "name": "hover",
+          "select": 
+          {
+            "type": "point", 
+            "fields": ["Child"], 
+            "on": "mouseover"
+          }
+        }
+      ]
+    },
+
+    {
+      "mark": "line"
+    }
+  ]
+}
