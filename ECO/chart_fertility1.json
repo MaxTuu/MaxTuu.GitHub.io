@@ -1,8 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
   "data": {
     "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_fertility1.csv"
   },
+
+  "description": "Produced by Max Moore. Source: https://data.oecd.org/pop/fertility-rates.htm",
+
   "height": 300,
   "width": 300,
 
@@ -40,7 +44,7 @@
         "param": "hover",
         "field": "Country",
         "type": "nominal",
-        "scale": {"range": ["#122b39", "#0063af", "#179fdb", "#0e5f83", "#00457a", "#0063af", "#3382bf", "#80b1d7", "#b3d0e7", "#c3e9e9"]}
+        "scale": {"scheme": "yellowgreenblue"}
       },
       "value": "grey"
     },
