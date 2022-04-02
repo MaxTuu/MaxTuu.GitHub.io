@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/datasets/familiesandhouseholdsfamiliesandhouseholds",
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_family3.csv"
+  },
+
+  "width": 300,
+  "height": 200,
+  "title": {
+    "text": "Families With Dependent Children",
+    "subtitle": "Number of families with dependent children, by family type. Source: ONS",
+    "subtitleFontSize": 10,
+    "color": "black",
+    "fontSize": 15,
+    "anchor": "start"
+  },
+
+  "params": [
+    {
+      "name": "typeparam",
+      "select": {"type": "point", "fields": ["type"]},
+      "bind": "legend"
+    }
+  ],
+  "transform": [{"filter": {"param": "typeparam"}}],
+
+  "mark": "area",
+  "encoding": {
+    "x": {"timeUnit": "yearmonth", "field": "year", "axis": {"format": "%Y"}, "title": null},
+    "y": {"aggregate": "sum", "field": "family", "title": null},
+    "color": {
+      "field": "type",
+      "scale": {"scheme": "yellowgreenblue", "reverse": true},
+      "sort": {"field": "order"},
+      "legend": {"title": "Select a family type"}
+    },
+    "tooltip": [
+      {"field": "type", "title": "Family Type"},
+      {"field": "Year", "title": "Year"},
+      {"field": "family", "title": "Number of families"}
+    ]
+  }
+}
