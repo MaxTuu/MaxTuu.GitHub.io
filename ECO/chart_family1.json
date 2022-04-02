@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/datasets/familiesandhouseholdsfamiliesandhouseholds",
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_family1.csv"
+  },
+  "height": 300,
+  "width": 300,
+  "title": {
+    "text": "UK Families",
+    "subtitle": "Number of families by family size. Source: ONS",
+    "subtitleFontSize": 10,
+    "color": "black",
+    "fontSize": 15,
+    "anchor": "start"
+  },
+
+
+  "params": [
+    {
+      "name": "house",
+      "select": {"type": "point", "fields": ["household"]},
+      "bind": "legend"
+    }
+  ],
+  
+  "transform": [{"filter": {"param": "house"}}],
+
+  "mark": {"type": "bar", "size": 10},
+  "encoding": {
+    "y": {
+      "aggregate": "sum",
+      "field": "Families",
+      "title": ""
+    },
+    "x": {"field": "year", "type": "temporal", "title": null},
+    "color": 
+    {
+      "field": "household", 
+      "sort": {"field": "rank"},
+      "scale": {"scheme": "yellowgreenblue", "reverse": true},
+      "legend": {"title": "Select a size"}
+    },
+    "tooltip": [
+      {"field": "household", "title": "Family type"},
+      {"field": "Year", "title": "Year"},
+      {"field": "Families", "title": "Number of Families"}
+    ]
+  }
+}
