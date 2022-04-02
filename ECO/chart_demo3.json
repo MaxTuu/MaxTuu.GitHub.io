@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/migrationwithintheuk/datasets/localareamigrationindicatorsunitedkingdom",
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_demo3.csv"
+  },
+
+  "height": 300,
+  "width": 300,
+  "title": {
+    "text": "Regional Population",
+    "subtitle": "Population and population change by English region. Source: ONS",
+    "subtitleFontSize": 10,
+    "color": "black",
+    "fontSize": 15,
+    "anchor": "start"
+  },
+
+  
+  "transform": [{"filter": {"param": "choice"}}],
+
+    "layer": [
+    {
+      "description": "transparent layer to make it easier to trigger selection",
+      "mark": {"type": "line", "strokeWidth": 15, "stroke": "transparent"},
+      "params": [
+        {
+          "name": "choice",
+          "select": {"type": "point", "fields": ["series"]},
+          "bind": {
+            "input": "select",
+            "options": ["Total Population", "Change in population","Cumulative change"],
+            "name": "Select a series:  "
+          },
+          "value": "Total Population"
+        },
+        {
+          "name": "hover",
+          "select": {"type": "point", "fields": ["region"], "on": "mouseover"}
+        }
+      ]
+    },
+    {"mark": "line"}
+  ],
+
+
+  "encoding": {
+    "x": {"field": "year", "type": "temporal", "title": null},
+    "y": {"field": "pop", "type": "quantitative", "title": null},
+    "color": {
+      "condition": {
+        "param": "hover",
+        "field": "region",
+        "type": "nominal",
+        "scale": {"scheme": "yellowgreenblue"}
+      },
+      "value": "grey"
+    },
+    "opacity": 
+    {
+      "condition": {"param": "hover", "value": 1}, "value": 0.2
+    },
+
+    "tooltip": [
+      {"field": "region", "title": "Region"},
+      {"field": "Year", "title": "Year"},
+      {"field": "pop", "title": "Value"}
+    ]
+  }
+}
