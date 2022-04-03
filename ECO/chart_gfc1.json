@@ -7,7 +7,7 @@
   "width": 300,
   "title": {
     "text": "Delinquency rate",
-    "subtitle": "Percent of commercial and residential property loans past due (United States). Source: FRED",
+    "subtitle": "Percent of commercial and residential property loans past due (US). Source: FRED",
     "subtitleFontSize": 10,
     "color": "black",
     "fontSize": 15,
