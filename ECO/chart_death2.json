@@ -35,7 +35,7 @@
       "value": 2022,
       "bind": {
         "input": "range",
-        "min": 1970,
+        "min": 1971,
         "max": 2020,
         "step": 1,
         "name": "End year:"
