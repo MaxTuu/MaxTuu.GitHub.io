@@ -10,7 +10,7 @@
   "height": 200,
   "title": {
     "text": "Families With Dependent Children",
-    "subtitle": "Number of families with dependent children, by family type. Source: ONS",
+    "subtitle": "Number of families with dependent children, by family type (UK). Source: ONS",
     "subtitleFontSize": 10,
     "color": "black",
     "fontSize": 15,
