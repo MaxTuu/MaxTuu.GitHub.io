@@ -1,0 +1,119 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Produced by Max Moore. Source: https://fred.stlouisfed.org/series/DRSFRMACBS, https://fred.stlouisfed.org/series/DRCRELEXFACBS",
+  
+
+  "height": 300,
+  "width": 300,
+  "title": {
+    "text": "Delinquency rate",
+    "subtitle": "Percent of commercial and residential property loans past due. Source: FRED",
+    "subtitleFontSize": 10,
+    "color": "black",
+    "fontSize": 15,
+    "anchor": "start"
+  },
+
+
+
+  "layer": [
+    {
+      "description": "transparent layer to make it easier to trigger selection",
+      "mark": {"type": "line", "strokeWidth": 20, "stroke": "transparent"},
+      "data": 
+      {
+        "url": "https://api.allorigins.win/raw?url=https%3A%2F%2Fapi.stlouisfed.org%2Ffred%2Fseries%2Fobservations%3Fseries_id%3DDRCRELEXFACBS%26api_key%3D659e964a0127c503ef5ebe23def51c61%26file_type%3Djson",
+        "format": {"type": "json", "property": "observations"}
+      }
+    },
+
+    {
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "color": "#36b7b4"
+        
+      },
+
+      "encoding": {
+        "y": 
+        {
+          "field": "value", 
+          "type": "quantitative", 
+          "title": ["Commercial", "Real Estate", "Loan"],
+          "axis": {
+            "titleAlign": "left",
+            "titleAnchor": "start",
+            "titleAngle": 0,
+            "titleBaseline": "bottom",
+            "titleColor": "#36b7b4",
+            "titleFontSize": 10,
+            "titleFontWeight": "normal",
+            "titleX": 18,
+            "titleY": 35
+          }
+          }
+      },
+
+      "data": {
+      "url": "https://api.allorigins.win/raw?url=https%3A%2F%2Fapi.stlouisfed.org%2Ffred%2Fseries%2Fobservations%3Fseries_id%3DDRCRELEXFACBS%26api_key%3D659e964a0127c503ef5ebe23def51c61%26file_type%3Djson",
+      "format": {"type": "json", "property": "observations"}
+      }
+    },
+
+
+
+
+    {
+      "description": "transparent layer to make it easier to trigger selection",
+      "mark": {"type": "line", "strokeWidth": 20, "stroke": "transparent"},
+      "data": 
+      {
+        "url": "https://api.allorigins.win/raw?url=https%3A%2F%2Fapi.stlouisfed.org%2Ffred%2Fseries%2Fobservations%3Fseries_id%3DDRSFRMACBS%26api_key%3D659e964a0127c503ef5ebe23def51c61%26file_type%3Djson",
+        "format": {"type": "json", "property": "observations"}
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "color": "#0063af"
+      },
+
+      "encoding": {
+        "x": 
+        {
+          "field": "date", 
+          "type": "temporal", 
+          "title": " Residential Mortgage",
+          "axis": {
+            "titleAlign": "left",
+            "titleAnchor": "start",
+            "titleAngle": 0,
+            "titleBaseline": "bottom",
+            "titleColor": "#0063af",
+            "titleFontSize": 10,
+            "titleFontWeight": "normal",
+            "titleX": 150,
+            "titleY": -265
+          }
+          }
+      },
+
+      "data": {
+      "url": "https://api.allorigins.win/raw?url=https%3A%2F%2Fapi.stlouisfed.org%2Ffred%2Fseries%2Fobservations%3Fseries_id%3DDRSFRMACBS%26api_key%3D659e964a0127c503ef5ebe23def51c61%26file_type%3Djson",
+      "format": {"type": "json", "property": "observations"}
+      }
+    }
+    
+  ],
+
+
+  "encoding": {
+    "x": {"field": "date", "type": "temporal", "title": ""},
+    "y": {"field": "value", "type": "quantitative", "title": ""},
+    "tooltip": [
+      {"field": "value", "title": "Delinquency rate (%)"}
+    ]
+  }
+}
