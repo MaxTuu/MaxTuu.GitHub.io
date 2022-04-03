@@ -1,13 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/marriagecohabitationandcivilpartnerships/datasets/marriagesinenglandandwales2013",
-
-  "data": {"url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_marriage1.csv"},
-
-
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_marriage1.csv"
+  },
   "height": 300,
   "width": 300,
-
   "title": {
     "text": "Marriages in England and Wales",
     "subtitle": "Number of marriages per year. Source: ONS",
@@ -16,47 +14,30 @@
     "fontSize": 15,
     "anchor": "start"
   },
-
-
-  "layer": 
-  [
+  "layer": [
     {
       "description": "transparent layer to make it easier to trigger selection",
-
       "mark": {"type": "line", "strokeWidth": 20, "stroke": "transparent"},
-
-      "params": 
-      [
+      "params": [
         {
           "name": "choice",
           "select": {"type": "point", "fields": ["units"]},
-          "bind": 
-          {
+          "bind": {
             "input": "select",
-            "options": ["Total Marriages", "Marriages Per Capita"],
+            "options": ["Total Marriages", "5 Year Moving Average"],
             "name": "Select a series:  "
           },
           "value": "Total Marriages"
         }
       ]
     },
-    
-    {"mark": "line"}
+    {"mark": {"type": "line", "interpolate": "monotone"}}
   ],
-
   "transform": [{"filter": {"param": "choice"}}],
-
-
-
   "encoding": {
     "x": {"field": "year", "type": "temporal", "title": null},
     "y": {"field": "Marriages", "type": "quantitative", "title": null},
     "color": {"value": "#179fdb"},
-    "tooltip": 
-    [
-      {"field": "Year"},
-      {"field": "Marriages", "title": "Value"}
-    ]
+    "tooltip": [{"field": "Year"}, {"field": "Marriages", "title": "Value"}]
   }
-
 }
