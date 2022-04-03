@@ -4,11 +4,11 @@
   "data": {
     "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_marriage3.csv"
   },
-  "height": 150,
-  "width": 350,
+  "height": 120,
+  "width": 300,
   "title": {
     "text": "Popular Days For Marriage",
-    "subtitle": "Number of marriages per date (2008-2018). Source: ONS",
+    "subtitle": "Number of marriages per date (England and Wales, 2008-2018). Source: ONS",
     "subtitleFontSize": 10,
     "color": "black",
     "fontSize": 15,
