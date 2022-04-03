@@ -1,15 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "data": {
     "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_fertility2.csv"
   },
-
   "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/conceptionandfertilityrates",
-
   "height": 300,
   "width": 300,
-
   "title": {
     "text": "Average Age Of Mother At Birth",
     "subtitle": "Age at first, second, third, and fourth child. Source: ONS",
@@ -19,82 +15,96 @@
     "anchor": "start"
   },
 
-  
-  "encoding": {
-    "x": 
-    {
-      "field": "year",
-      "type": "temporal",
-      "title": ""
-    },
 
-    "y": 
+  "transform": [
+    {"filter": "datum.Year>minYear"},
+    {"filter": "datum.Year<maxYear"}
+  ],
+  
+  "params": [
     {
+      "name": "minYear",
+      "value": 1938,
+      "bind": {
+        "input": "range",
+        "min": 1938,
+        "max": 2014,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2018,
+      "bind": {
+        "input": "range",
+        "min": 1942,
+        "max": 2018,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+
+
+  "encoding": {
+    "x": {"field": "year", "type": "temporal", "title": ""},
+    "y": {
       "field": "age",
       "type": "quantitative",
       "axis": {
-      "title": "Age of mother",
-      "titleFontSize": 10,
-      "titleFontWeight": 500
+        "title": "Age of mother",
+        "titleFontSize": 10,
+        "titleFontWeight": 500
       },
-      "scale": {"domain": [18,34]}
+      "scale": {"domain": [18, 34]}
     },
-
-    "color": 
-    {
+    "color": {
       "condition": {
         "param": "hover",
         "field": "Child",
         "type": "nominal",
         "scale": {"scheme": "yellowgreenblue"},
-        "legend": {"title": "Child Number", "values": ["First Child", "Second Child", "Third Child", "Fourth Child"]}
+        "legend": {
+          "title": "Child Number",
+          "values": [
+            "First Child",
+            "Second Child",
+            "Third Child",
+            "Fourth Child"
+          ],
+          "orient": "none",
+          "direction": "vertical",
+          "labelOffset": 3,
+          "legendX": 130,
+          "legendY": 220,
+          "columns": 2,
+          "fillColor": "white",
+          "strokeColor": "black",
+          "padding": 3
+        }
       },
       "value": "grey",
-      "legend": {
-        "title": "Child Order"
-      }
+      "legend": {"title": "Child Order"}
     },
-
-    "opacity": 
-    {
-      "condition": {"param": "hover", "value": 1}, 
-      "value": 0.2
-    },
-
-    "tooltip": 
-    [
+    "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2},
+    "tooltip": [
       {"field": "Child"},
       {"field": "Year", "title": "Year"},
       {"field": "age", "title": "Age of mother"}
     ]
-
-    
   },
-
-
-  "layer": 
-  [
+  "layer": [
     {
       "description": "transparent layer to make it easier to trigger selection",
-
       "mark": {"type": "line", "strokeWidth": 20, "stroke": "transparent"},
-
-      "params": 
-      [
+      "params": [
         {
           "name": "hover",
-          "select": 
-          {
-            "type": "point", 
-            "fields": ["Child"], 
-            "on": "mouseover"
-          }
+          "select": {"type": "point", "fields": ["Child"], "on": "mouseover"}
         }
       ]
     },
-
-    {
-      "mark": "line"
-    }
+    {"mark": "line"}
   ]
 }
