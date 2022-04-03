@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Produced by Max Moore.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_gfc2.csv"
+  },
+  "width": 300,
+  "height": 200,
+  "title": {
+    "text": "Central Bank Assets",
+    "subtitle": "Total Assets by central bank. Source: BoE, BoJ, FRED",
+    "subtitleFontSize": 10,
+    "color": "black",
+    "fontSize": 15,
+    "anchor": "start"
+  },
+  "params": [
+    {
+      "name": "ageparam",
+      "select": {"type": "point", "fields": ["country"]},
+      "bind": "legend"
+    }
+  ],
+  "transform": [{"filter": {"param": "ageparam"}}],
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "timeUnit": "yearmonth",
+      "field": "Year",
+      "axis": {"format": "%Y"},
+      "title": null
+    },
+    "y": {"aggregate": "sum", "field": "asset", "title": "Millions of U.S. Dollars", "type": "quantitative"},
+    "color": {
+      "field": "country",
+      "scale": {"scheme": "yellowgreenblue"},
+      "sort": {"field": "order"},
+      "legend": {"title": "Select a bank"}
+    },
+    "tooltip": [
+      {"field": "country", "title": "Bank"},
+      {"field": "year", "title": "Year"},
+      {"field": "asset", "title": "Total Assets (Million $)"}
+    ]
+  }
+}
