@@ -1,21 +1,50 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/datasets/familiesandhouseholdsfamiliesandhouseholds",
-  
   "data": {
     "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_family1.csv"
   },
-
   "height": 300,
   "width": 300,
   "title": {
     "text": "Change In Family Sizes",
-    "subtitle": "Cumulative change in number of families by size. Source: ONS",
+    "subtitle": "Cumulative change in number of families by size (UK). Source: ONS",
     "subtitleFontSize": 10,
     "color": "black",
     "fontSize": 15,
     "anchor": "start"
   },
+
+  "transform": [
+    {"filter": "datum.Year>minYear"},
+    {"filter": "datum.Year<maxYear"},
+    {"filter": {"param": "ageparam"}}
+  ],
+
+  "params": [
+    {
+      "name": "minYear",
+      "value": 1996,
+      "bind": {
+        "input": "range",
+        "min": 1996,
+        "max": 2016,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2022,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
 
   "layer": [
     {
@@ -24,30 +53,52 @@
       "params": [
         {
           "name": "hover",
-          "select": {"type": "point", "fields": ["household"], "on": "mouseover"}
+          "select": {
+            "type": "point",
+            "fields": ["household"],
+            "on": "mouseover"
+          }
+        },
+        {
+          "name": "ageparam",
+          "select": {"type": "point", "fields": ["household"]},
+          "bind": "legend"
         }
       ]
     },
     {"mark": "line"}
   ],
-
   "encoding": {
     "x": {"field": "year", "type": "temporal", "title": null},
-    "y": {"field": "cumchg ", "type": "quantitative", "title": "Cumulative change (%)"},
-
+    "y": {
+      "field": "cumchg ",
+      "type": "quantitative",
+      "title": "Cumulative change (%)"
+    },
     "color": {
       "condition": {
         "param": "hover",
         "field": "household",
         "type": "nominal",
         "scale": {"scheme": "yellowgreenblue"},
-        "legend": {"title": "Family size"},
+        "legend": 
+        {
+          "title": "Select a family size",
+          "orient": "none",
+          "direction": "vertical",
+          "labelOffset": 3,
+          "legendX": 10,
+          "legendY": 10,
+          "columns": 1,
+          "fillColor": "white",
+          "strokeColor": "black",
+          "padding": 3
+        },
         "sort": {"field": "rank"}
       },
       "value": "grey"
     },
     "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2},
-    
     "tooltip": [
       {"field": "household", "title": "Family size"},
       {"field": "Year", "title": "Year"},
