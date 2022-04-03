@@ -1,15 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "data": {
     "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_fertility1.csv"
   },
-
   "description": "Produced by Max Moore. Source: https://data.oecd.org/pop/fertility-rates.htm",
-
   "height": 300,
   "width": 300,
-
   "title": {
     "text": "Fertility Rate",
     "subtitle": "Average number of children born to a woman over her lifetime. Source: OECD",
@@ -18,74 +14,97 @@
     "fontSize": 15,
     "anchor": "start"
   },
-  
-  "encoding": {
-    "x": 
-    {
-      "field": "TIME",
-      "type": "temporal",
-      "title": ""
-    },
 
-    "y": 
+  "transform": [
+    {"filter": "datum.year>minYear"},
+    {"filter": "datum.year<maxYear"},
+    {"filter": {"param": "ageparam"}}
+  ],
+  
+  "params": [
     {
+      "name": "minYear",
+      "value": 1960,
+      "bind": {
+        "input": "range",
+        "min": 1960,
+        "max": 2016,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2019,
+      "bind": {
+        "input": "range",
+        "min": 1963,
+        "max": 2019,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+
+
+  "encoding": {
+    "x": {"field": "TIME", "type": "temporal", "title": ""},
+    "y": {
       "field": "Value",
       "type": "quantitative",
       "axis": {
-      "title": "Number of children",
-      "titleFontSize": 10,
-      "titleFontWeight": 500
+        "title": "Number of children",
+        "titleFontSize": 10,
+        "titleFontWeight": 500
       }
-      
     },
-
-    "color": 
-    {
+    "color": {
       "condition": {
         "param": "hover",
         "field": "Country",
         "type": "nominal",
-        "scale": {"scheme": "yellowgreenblue"}
+        "scale": {"scheme": "yellowgreenblue"},
+        "legend": 
+        {
+          "title": "Select a country",
+          "orient": "none",
+          "direction": "vertical",
+          "labelOffset": 3,
+          "legendX": 164,
+          "legendY": 0,
+          "columns": 2,
+          "fillColor": "white",
+          "strokeColor": "black",
+          "padding": 3
+        }
       },
       "value": "grey"
+      
     },
-
-    "opacity": 
-    {
-      "condition": {"param": "hover", "value": 1}, 
-      "value": 0.2
-    },
-
-    "tooltip": 
-    [
+    "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2},
+    "tooltip": [
       {"field": "Country"},
       {"field": "year", "title": "Year"},
       {"field": "Value", "title": "Fertility Rate"}
     ]
   },
-
-
-  "layer": 
-  [
+  "layer": [
     {
       "description": "transparent layer to make it easier to trigger selection",
-
       "mark": {"type": "line", "strokeWidth": 10, "stroke": "transparent"},
-
-      "params": 
-      [
+      "params": [
         {
           "name": "hover",
-          "select": 
-          {
-            "type": "point", 
-            "fields": ["Country"], 
-            "on": "mouseover"
-          }
+          "select": {"type": "point", "fields": ["Country"], "on": "mouseover"}
+        },
+        {
+          "name": "ageparam",
+          "select": {"type": "point", "fields": ["Country"]},
+          "bind": "legend"
         }
       ]
     },
-
-    {"mark": "line"}
+    {"mark": "line"
+    }
   ]
 }
