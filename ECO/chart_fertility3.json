@@ -8,7 +8,7 @@
   "width": 300,
   "title": {
     "text": "Parent Ages",
-    "subtitle": "Number of children, by the age of registered parents (2020). Source: ONS",
+    "subtitle": "Number of children, by the age of registered parents (England and Wales, 2020). Source: ONS",
     "subtitleFontSize": 10,
     "color": "black",
     "fontSize": 15,
