@@ -9,7 +9,7 @@
 
   "title": {
     "text": "Population By Age And Ethnicity",
-    "subtitle": "Population by age. England and Wales (2019). Source: ONS",
+    "subtitle": "England and Wales (2019). Source: ONS",
     "subtitleFontSize": 10,
     "color": "black",
     "fontSize": 15,
