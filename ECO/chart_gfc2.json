@@ -42,7 +42,7 @@
       "sort": {"field": "order"},
       "legend": {"title": "Select a bank",
         "orient": "top-left",
-        "fillColor": "#e6eff7",
+        "fillColor": "white",
         "strokeColor": "black",
         "padding": 3
       }
