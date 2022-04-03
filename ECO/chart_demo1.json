@@ -6,25 +6,22 @@
   "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/datasets/populationestimatesbyethnicgroupenglandandwales",
   "height": 250,
   "width": 300,
-
   "title": {
-    "text": "Regional Ethnic Distributions",
+    "text": "Ethnic Diversity By Region",
     "subtitle": "Relative size of ethnic groups by English regions and Wales (2019). Source: ONS",
     "subtitleFontSize": 10,
     "color": "black",
     "fontSize": 15,
     "anchor": "start"
   },
-
-  "params": [{
-          "name": "ethnicityp",
-          "select": {"type": "point", "fields": ["Ethnicity"]},
-          "bind": "legend"
-        }
-      ],
-
+  "params": [
+    {
+      "name": "ethnicityp",
+      "select": {"type": "point", "fields": ["Ethnicity"]},
+      "bind": "legend"
+    }
+  ],
   "transform": [{"filter": {"param": "ethnicityp"}}],
-
   "mark": "bar",
   "encoding": {
     "y": {
@@ -33,19 +30,29 @@
       "title": "",
       "sort": "ascending"
     },
-    "x": 
-    {
-      "field": "region", 
+    "x": {
+      "field": "region",
       "sort": {"field": "rank"},
       "axis": {"labelAngle": "330"},
       "title": null
     },
-    "color": 
-    {
-      "field": "Ethnicity", 
+    "color": {
+      "field": "Ethnicity",
       "sort": "ascending",
       "scale": {"scheme": "yellowgreenblue"},
-      "legend": {"title": "Select an ethnicity"}
+      "legend": 
+      {
+        "title": "Select an ethnicity",
+        "orient": "none",
+          "direction": "vertical",
+          "labelOffset": 3,
+          "legendX": 5,
+          "legendY": 100,
+          "columns": 1,
+          "fillColor": "white",
+          "strokeColor": "black",
+          "padding": 3
+      }
     },
     "tooltip": [
       {"field": "region"},
