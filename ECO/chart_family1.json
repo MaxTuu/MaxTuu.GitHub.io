@@ -8,7 +8,7 @@
   "width": 300,
   "title": {
     "text": "UK Families",
-    "subtitle": "Number of families by family size. Source: ONS",
+    "subtitle": "Number of families by family size (UK). Source: ONS",
     "subtitleFontSize": 10,
     "color": "black",
     "fontSize": 15,
