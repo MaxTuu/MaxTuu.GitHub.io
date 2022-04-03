@@ -15,18 +15,43 @@
     "anchor": "start"
   },
 
-  "transform": [{"filter": {"param": "countryp"}}],
 
+  "params": [
+    {
+      "name": "minYear",
+      "value": 1970,
+      "bind": {
+        "input": "range",
+        "min": 1970,
+        "max": 2016,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2019,
+      "bind": {
+        "input": "range",
+        "min": 1975,
+        "max": 2019,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+
+
+  "transform": [
+    {"filter": "datum.Year>minYear"},
+    {"filter": "datum.Year<maxYear"},
+    {"filter": {"param": "countryp"}}],
   "encoding": {
     "x": {"field": "TIME", "type": "temporal", "title": ""},
     "y": {
       "field": "Value",
       "type": "quantitative",
-      "axis": {
-        "title": "Deaths",
-        "titleFontSize": 12,
-        "titleFontWeight": 500
-      }
+      "axis": {"title": "Deaths", "titleFontSize": 12, "titleFontWeight": 500}
     },
     "color": {
       "condition": {
@@ -34,7 +59,19 @@
         "field": "Country",
         "type": "nominal",
         "scale": {"scheme": "yellowgreenblue"},
-        "legend": {"title": "Select a country"}
+        "legend": 
+        {
+          "title": "Select a country",
+          "orient": "none",
+          "direction": "vertical",
+          "labelOffset": 3,
+          "legendX": 154,
+          "legendY": 10,
+          "columns": 2,
+          "fillColor": "white",
+          "strokeColor": "black",
+          "padding": 3
+        }
       },
       "value": "grey"
     },
