@@ -8,7 +8,7 @@
   "width": 300,
   "title": {
     "text": "Marriages in England and Wales",
-    "subtitle": "Number of marriages per year, and 5 year moving average percentage change. Source: ONS",
+    "subtitle": "Number of marriages per year, and 5 year moving-average percentage change. Source: ONS",
     "subtitleFontSize": 10,
     "color": "black",
     "fontSize": 15,
