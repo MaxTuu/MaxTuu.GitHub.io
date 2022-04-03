@@ -1,92 +1,98 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "data": {
     "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_marriage2.csv"
   },
-
   "description": "Produced by Max Moore. Source: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/marriagecohabitationandcivilpartnerships/datasets/marriagesinenglandandwales2013",
-
   "height": 300,
   "width": 300,
-
   "title": {
     "text": "Age Of Newly-Weds",
-    "subtitle": "Average age by prior marriage history. Source: ONS",
+    "subtitle": "Average age of newly-weds in England and Wales. Source: ONS",
     "subtitleFontSize": 10,
     "color": "black",
     "fontSize": 15,
     "anchor": "start"
   },
-  
-  "encoding": {
-    "x": 
-    {
-      "field": "year",
-      "type": "temporal",
-      "title": ""
-    },
 
-    "y": 
+  "transform": [
+    {"filter": "datum.Year>minYear"},
+    {"filter": "datum.Year<maxYear"}
+  ],
+
+  "params": [
     {
+      "name": "minYear",
+      "value": 1947,
+      "bind": {
+        "input": "range",
+        "min": 1947,
+        "max": 2014,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2019,
+      "bind": {
+        "input": "range",
+        "min": 1950,
+        "max": 2018,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+
+
+  "encoding": {
+    "x": {"field": "year", "type": "temporal", "title": ""},
+    "y": {
       "field": "value",
       "type": "quantitative",
-      "axis": {
-      "title": "Age",
-      "titleFontSize": 12,
-      "titleFontWeight": 500
-      }
-      
+      "axis": {"title": "Age", "titleFontSize": 12, "titleFontWeight": 500}
     },
-
-    "color": 
-    {
+    "color": {
       "condition": {
         "param": "hover",
         "field": "series",
         "type": "nominal",
         "scale": {"scheme": "yellowgreenblue"},
-        "legend": {"title": "Type of newly-wed"}
+        "legend": 
+        {
+          "title": "Type of newly-wed",
+          "orient": "none",
+          "direction": "vertical",
+          "labelOffset": 3,
+          "legendX": 180,
+          "legendY": 200,
+          "columns": 1,
+          "fillColor": "white",
+          "strokeColor": "black",
+          "padding": 3
+        }
       },
       "value": "grey"
     },
-
-    "opacity": 
-    {
-      "condition": {"param": "hover", "value": 1}, 
-      "value": 0.2
-    },
-
-    "tooltip": 
-    [
+    "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2},
+    "tooltip": [
       {"field": "series", "title": "Type"},
       {"field": "Year", "title": "Year"},
       {"field": "value", "title": "Average Age"}
     ]
   },
-
-
-  "layer": 
-  [
+  "layer": [
     {
       "description": "transparent layer to make it easier to trigger selection",
-
       "mark": {"type": "line", "strokeWidth": 10, "stroke": "transparent"},
-
-      "params": 
-      [
+      "params": [
         {
           "name": "hover",
-          "select": 
-          {
-            "type": "point", 
-            "fields": ["series"], 
-            "on": "mouseover"
-          }
+          "select": {"type": "point", "fields": ["series"], "on": "mouseover"}
         }
       ]
     },
-
     {"mark": "line"}
   ]
 }
