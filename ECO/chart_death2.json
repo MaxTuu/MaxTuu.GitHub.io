@@ -4,10 +4,8 @@
   "data": {
     "url": "https://raw.githubusercontent.com/MaxTuu/MaxTuu.GitHub.io/main/ECO/chart_death2.csv"
   },
-
   "height": 300,
   "width": 300,
-
   "title": {
     "text": "Life Expectancy At Birth",
     "subtitle": "Life expectancy in England. Source: ONS",
@@ -16,10 +14,10 @@
     "fontSize": 15,
     "anchor": "start"
   },
-
-  "transform": [{"filter": "datum.Year>minYear"},
-    {"filter": "datum.Year<maxYear"}],
-
+  "transform": [
+    {"filter": "datum.Year>minYear"},
+    {"filter": "datum.Year<maxYear"}
+  ],
   "params": [
     {
       "name": "minYear",
@@ -37,60 +35,51 @@
       "value": 2022,
       "bind": {
         "input": "range",
-        "min": 1963,
+        "min": 1970,
         "max": 2020,
         "step": 1,
         "name": "End year:"
       }
     }
   ],
-
-
-
-    "layer": 
-  [
+  "layer": [
     {
       "description": "transparent layer to make it easier to trigger selection",
-
       "mark": {"type": "line", "strokeWidth": 20, "stroke": "transparent"},
-
-      "params": 
-      [
+      "params": [
         {
           "name": "hover",
-          "select": 
-          {
-            "type": "point", 
-            "fields": ["Child"], 
-            "on": "mouseover"
-          }
+          "select": {"type": "point", "fields": ["Child"], "on": "mouseover"}
         }
       ]
     },
-
-    {
-      "mark": "line"
-    }
+    {"mark": "line"}
   ],
-
   "encoding": {
     "x": {"field": "year", "type": "temporal", "title": null},
-
-    "y": 
-    {
-      "field": "Value", 
+    "y": {
+      "field": "Value",
       "type": "quantitative",
-      "scale": {"domain": ["66","84"]},
+      "scale": {"domain": ["66", "84"]},
       "title": "Years"
     },
-
-    "color": 
-    {
+    "color": {
       "field": "Variable",
       "scale": {"scheme": "yellowgreenblue"},
-      "legend": {"title": "Series"}
+      "legend": 
+      {
+        "title": "Series",
+        "orient": "none",
+        "direction": "vertical",
+        "labelOffset": 3,
+        "legendX": 10,
+        "legendY": 10,
+        "columns": 1,
+        "fillColor": "white",
+        "strokeColor": "black",
+        "padding": 3
+      }
     },
-
     "tooltip": [
       {"field": "Variable", "title": "Series"},
       {"field": "Year", "title": "Year"},
